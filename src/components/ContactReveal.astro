@@ -1,0 +1,98 @@
+---
+interface Props {
+  emailParts: [string, string];
+  phoneFull: string;
+  phoneObfuscated: string;
+  linkedin: string;
+  labels: {
+    emailReveal: string;
+    phoneReveal: string;
+    linkedin: string;
+  };
+}
+
+const { emailParts, phoneFull, phoneObfuscated, linkedin, labels } = Astro.props;
+
+// Encode phone into a base64 blob so it does not appear as plain digits in the source
+const phoneB64 = Buffer.from(phoneFull).toString('base64');
+const [emailLocal, emailDomain] = emailParts;
+---
+<div class="contact-reveal flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-600">
+  <span
+    class="contact-item"
+    data-email-local={emailLocal}
+    data-email-domain={emailDomain}
+  >
+    <button
+      type="button"
+      class="contact-trigger inline-flex items-center gap-1.5 rounded-md border border-dashed border-zinc-300 bg-white px-2 py-0.5 text-zinc-500 transition-colors hover:border-zinc-500 hover:text-zinc-900"
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+        <polyline points="3,7 12,13 21,7"></polyline>
+      </svg>
+      {labels.emailReveal}
+    </button>
+    <a class="contact-value hidden text-zinc-700 underline-offset-2 hover:underline" href="#"></a>
+  </span>
+
+  <span class="contact-item" data-phone-b64={phoneB64} data-phone-display={phoneObfuscated}>
+    <button
+      type="button"
+      class="contact-trigger inline-flex items-center gap-1.5 rounded-md border border-dashed border-zinc-300 bg-white px-2 py-0.5 text-zinc-500 transition-colors hover:border-zinc-500 hover:text-zinc-900"
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      {labels.phoneReveal}
+    </button>
+    <a class="contact-value hidden text-zinc-700 underline-offset-2 hover:underline" href="#"></a>
+  </span>
+
+  <a
+    href={linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-1.5 rounded-md border border-zinc-300 bg-white px-2 py-0.5 text-zinc-700 underline-offset-2 transition-colors hover:border-zinc-500 hover:underline"
+  >
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+    </svg>
+    {labels.linkedin}
+  </a>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelectorAll('.contact-reveal');
+    if (!root.length) return;
+
+    const decodePhone = (b64) => {
+      try { return atob(b64); } catch (_) { return ''; }
+    };
+
+    document.querySelectorAll('.contact-reveal .contact-item').forEach((item) => {
+      const trigger = item.querySelector('.contact-trigger');
+      const value = item.querySelector('.contact-value');
+      if (!trigger || !value) return;
+
+      const emailLocal = item.getAttribute('data-email-local');
+      const emailDomain = item.getAttribute('data-email-domain');
+      const phoneB64 = item.getAttribute('data-phone-b64');
+
+      trigger.addEventListener('click', () => {
+        if (emailLocal && emailDomain) {
+          const email = emailLocal + '@' + emailDomain;
+          value.textContent = email;
+          value.setAttribute('href', 'mailto:' + email);
+        } else if (phoneB64) {
+          const phone = decodePhone(phoneB64);
+          value.textContent = phone;
+          value.setAttribute('href', 'tel:' + phone);
+        }
+        trigger.classList.add('hidden');
+        value.classList.remove('hidden');
+      });
+    });
+  })();
+</script>

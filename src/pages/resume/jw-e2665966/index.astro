@@ -1,0 +1,22 @@
+---
+import { getEntry, render } from 'astro:content';
+import ResumeLayout from '../../../layouts/ResumeLayout.astro';
+
+const zhEntry = await getEntry('resume', 'zh');
+const enEntry = await getEntry('resume', 'en');
+
+if (!zhEntry || !enEntry) {
+  throw new Error('Resume content entries not found.');
+}
+
+const { Content: ZhContent } = await render(zhEntry);
+const { Content: EnContent } = await render(enEntry);
+---
+<ResumeLayout zh={zhEntry.data} en={enEntry.data}>
+  <div data-lang-section="zh">
+    <ZhContent />
+  </div>
+  <div data-lang-section="en">
+    <EnContent />
+  </div>
+</ResumeLayout>

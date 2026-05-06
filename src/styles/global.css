@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+    "Noto Sans CJK SC", sans-serif;
+  --color-ink: #18181b;
+  --color-ink-soft: #3f3f46;
+  --color-muted: #71717a;
+  --color-rule: #e4e4e7;
+  --color-accent: #1f3a8a;
+  --color-bg: #fafaf9;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-feature-settings: "kern", "liga", "calt", "ss01";
+}
+
+html[data-lang="en"] [data-lang-section="zh"],
+html[data-lang="zh"] [data-lang-section="en"] {
+  display: none !important;
+}
+
+.resume-prose h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.resume-prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-prose p {
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+  margin-bottom: 0.65rem;
+}
+
+.resume-prose strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.resume-prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.4rem 0 0.85rem;
+}
+
+.resume-prose ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+}
+
+.resume-prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-muted);
+}
+
+.resume-prose a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+  transition: border-color 120ms ease;
+}
+
+.resume-prose a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+@media print {
+  @page { margin: 1.5cm; }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10pt;
+  }
+
+  .no-print { display: none !important; }
+
+  .resume-prose h2 {
+    font-size: 11pt;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    border-bottom-color: #888;
+  }
+
+  .resume-prose h3 {
+    font-size: 10.5pt;
+    margin-top: 9pt;
+  }
+
+  .resume-prose p,
+  .resume-prose ul li {
+    color: #000 !important;
+    line-height: 1.45;
+  }
+
+  .resume-prose a {
+    color: #000 !important;
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  .resume-prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555;
+  }
+
+  h1, h2, h3 { page-break-after: avoid; break-after: avoid-page; }
+  section, li { page-break-inside: avoid; break-inside: avoid; }
+}

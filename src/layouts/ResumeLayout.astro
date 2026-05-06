@@ -1,0 +1,67 @@
+---
+import Base from './Base.astro';
+import LangToggle from '../components/LangToggle.astro';
+import PrintButton from '../components/PrintButton.astro';
+import ContactReveal from '../components/ContactReveal.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  zh: CollectionEntry<'resume'>['data'];
+  en: CollectionEntry<'resume'>['data'];
+}
+
+const { zh, en } = Astro.props;
+---
+<Base title={`${zh.nameEn} · ${zh.title} / ${en.title}`} description="Personal portfolio of Jake Wu">
+  <main class="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
+    <div class="no-print mb-8 flex flex-wrap items-center justify-between gap-3">
+      <LangToggle />
+      <PrintButton zh="打印 / 保存 PDF" en="Print / Save as PDF" />
+    </div>
+
+    <header class="mb-10">
+      <div data-lang-section="zh">
+        <h1 class="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+          {zh.name} <span class="text-zinc-400">· {zh.nameEn}</span>
+        </h1>
+        <p class="mt-2 text-zinc-600">{zh.title}</p>
+        <p class="mt-1 text-sm text-zinc-500">{zh.location} · {zh.tagline}</p>
+        <div class="mt-5">
+          <ContactReveal
+            emailParts={zh.emailParts}
+            phoneFull={zh.phoneFull}
+            phoneObfuscated={zh.phoneObfuscated}
+            linkedin={zh.linkedin}
+            labels={{ emailReveal: '点击查看邮箱', phoneReveal: '点击查看电话', linkedin: 'LinkedIn' }}
+          />
+        </div>
+      </div>
+
+      <div data-lang-section="en">
+        <h1 class="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+          {en.nameEn} <span class="text-zinc-400">· {en.name}</span>
+        </h1>
+        <p class="mt-2 text-zinc-600">{en.title}</p>
+        <p class="mt-1 text-sm text-zinc-500">{en.location} · {en.tagline}</p>
+        <div class="mt-5">
+          <ContactReveal
+            emailParts={en.emailParts}
+            phoneFull={en.phoneFull}
+            phoneObfuscated={en.phoneObfuscated}
+            linkedin={en.linkedin}
+            labels={{ emailReveal: 'Reveal email', phoneReveal: 'Reveal phone', linkedin: 'LinkedIn' }}
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="resume-prose">
+      <slot />
+    </article>
+
+    <footer class="no-print mt-16 border-t border-zinc-200 pt-6 text-xs text-zinc-400">
+      <span data-lang-section="zh">© {new Date().getFullYear()} 吴启杰 / Jake Wu · 半公开链接，请勿转发</span>
+      <span data-lang-section="en">© {new Date().getFullYear()} Jake Wu · Semi-private link, please do not redistribute</span>
+    </footer>
+  </main>
+</Base>
