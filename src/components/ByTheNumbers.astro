@@ -1,0 +1,46 @@
+---
+import { formatReach } from '../lib/coverage';
+
+interface Stat {
+  value: string;
+  label: string;
+  hint?: string;
+}
+
+interface Props {
+  reach: number;
+  outlets: number;
+  yearsCount: number;
+  regions: number;
+  awards?: number;
+}
+
+const { reach, outlets, yearsCount, regions, awards } = Astro.props;
+
+const stats: Stat[] = [
+  { value: formatReach(reach) + '+', label: 'Cumulative Reach', hint: 'Sum of monthly visitors across all outlets covered' },
+  { value: String(outlets), label: 'Unique Outlets' },
+  { value: String(regions), label: 'Markets' },
+];
+if (awards != null) {
+  stats.push({ value: String(awards), label: 'Awards Won' });
+}
+stats.push({ value: `${yearsCount}y`, label: 'Active Period' });
+---
+<section class="grid grid-cols-2 gap-6 border-y border-zinc-200 bg-white py-10 md:grid-cols-5 md:py-14">
+  {stats.map((s) => (
+    <div class="px-4 text-center md:text-left">
+      <div class="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+        {s.value}
+      </div>
+      <div class="mt-1 text-xs uppercase tracking-widest text-zinc-500">
+        {s.label}
+      </div>
+      {s.hint && (
+        <div class="mt-1 hidden text-[11px] leading-relaxed text-zinc-400 md:block">
+          {s.hint}
+        </div>
+      )}
+    </div>
+  ))}
+</section>

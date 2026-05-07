@@ -1,14 +1,27 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Jake Wu" description="">
   <main class="mx-auto flex min-h-screen max-w-md items-center px-6">
     <div class="w-full">
       <h1 class="text-2xl font-semibold tracking-tight text-zinc-900">Jake Wu</h1>
       <p class="mt-2 text-sm text-zinc-500">
-        <span data-lang-section="zh">这里是私人 portfolio。如需访问具体内容，请使用我提供给你的链接。</span>
-        <span data-lang-section="en">Private portfolio. Please use the direct link shared with you.</span>
+        <span data-lang-section="zh">Senior Brand PR Manager, Donner Music. 常驻广州。</span>
+        <span data-lang-section="en">Senior Brand PR Manager at Donner Music. Based in Guangzhou.</span>
       </p>
+      <ul class="mt-6 space-y-2 text-sm">
+        <li>
+          <a href={`${base}/coverage/`} class="inline-flex items-center gap-1.5 text-zinc-700 underline-offset-2 hover:text-zinc-900 hover:underline">
+            <span data-lang-section="zh">PR 媒体报道作品集 →</span>
+            <span data-lang-section="en">PR Coverage Book →</span>
+          </a>
+        </li>
+        <li class="text-zinc-400">
+          <span data-lang-section="zh">个人简历需直链访问。</span>
+          <span data-lang-section="en">Resume by direct link only.</span>
+        </li>
+      </ul>
     </div>
   </main>
 </Base>

@@ -1,0 +1,133 @@
+---
+import type { Clipping } from '../lib/coverage';
+import { formatReach, formatDate } from '../lib/coverage';
+
+interface Props {
+  clippings: Clipping[];
+  showFilters?: boolean;
+}
+
+const { clippings, showFilters = true } = Astro.props;
+
+// Build filter option lists from the data.
+const years = [...new Set(clippings.map((c) => c.year))].sort((a, b) => b - a);
+const regions = [...new Set(clippings.map((c) => c.region).filter(Boolean) as string[])].sort();
+const products = [...new Set(clippings.map((c) => c.product).filter(Boolean) as string[])].sort();
+const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
+---
+<div class="coverage-table-root">
+  {showFilters && (
+    <div class="mb-4 flex flex-wrap items-center gap-2 text-sm">
+      <input
+        type="search"
+        placeholder="Search outlet, product…"
+        class="filter-search w-full rounded-md border border-zinc-300 bg-white px-3 py-1.5 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none sm:w-64"
+      />
+      <select class="filter-year rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-zinc-700">
+        <option value="">All years</option>
+        {years.map((y) => <option value={y}>{y}</option>)}
+      </select>
+      <select class="filter-region rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-zinc-700">
+        <option value="">All regions</option>
+        {regions.map((r) => <option value={r}>{r}</option>)}
+      </select>
+      <select class="filter-tier rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-zinc-700">
+        <option value="">All tiers</option>
+        {tiers.map((t) => <option value={t}>Tier {t}</option>)}
+      </select>
+      <span class="filter-count ml-auto text-xs text-zinc-500"></span>
+    </div>
+  )}
+
+  <div class="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+    <table class="w-full text-sm">
+      <thead class="bg-zinc-50 text-left text-xs uppercase tracking-wider text-zinc-500">
+        <tr>
+          <th class="px-3 py-2.5 font-medium">Date</th>
+          <th class="px-3 py-2.5 font-medium">Outlet</th>
+          <th class="px-3 py-2.5 font-medium">Product</th>
+          <th class="px-3 py-2.5 font-medium">Region</th>
+          <th class="px-3 py-2.5 font-medium">Type</th>
+          <th class="px-3 py-2.5 text-right font-medium">Reach</th>
+          <th class="px-3 py-2.5 font-medium"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-zinc-100">
+        {clippings.map((c) => (
+          <tr
+            class="hover:bg-zinc-50"
+            data-year={c.year}
+            data-region={c.region ?? ''}
+            data-tier={c.outlet_tier}
+            data-search={`${c.outlet} ${c.product ?? ''}`.toLowerCase()}
+          >
+            <td class="whitespace-nowrap px-3 py-2 text-zinc-500">{formatDate(c.date)}</td>
+            <td class="px-3 py-2">
+              <span class="font-medium text-zinc-800">{c.outlet}</span>
+              {c.outlet_tier === 1 && (
+                <span class="ml-1.5 inline-block align-middle rounded bg-zinc-900 px-1 py-px text-[9px] font-bold leading-tight text-white">T1</span>
+              )}
+            </td>
+            <td class="max-w-[24ch] truncate px-3 py-2 text-zinc-600" title={c.product ?? ''}>{c.product ?? '—'}</td>
+            <td class="px-3 py-2 text-zinc-500">{c.region ?? '—'}</td>
+            <td class="px-3 py-2 text-zinc-500">{c.content_type ?? '—'}</td>
+            <td class="whitespace-nowrap px-3 py-2 text-right tabular-nums text-zinc-700">{formatReach(c.reach)}</td>
+            <td class="px-3 py-2 text-right">
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-900"
+                aria-label="Open article"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('.coverage-table-root').forEach((root) => {
+    const search = root.querySelector('.filter-search');
+    const year = root.querySelector('.filter-year');
+    const region = root.querySelector('.filter-region');
+    const tier = root.querySelector('.filter-tier');
+    const countEl = root.querySelector('.filter-count');
+    const rows = root.querySelectorAll('tbody tr');
+
+    function update() {
+      const q = (search?.value || '').toLowerCase().trim();
+      const y = year?.value || '';
+      const r = region?.value || '';
+      const t = tier?.value || '';
+      let visible = 0;
+      rows.forEach((row) => {
+        const matches =
+          (!q || row.dataset.search.includes(q)) &&
+          (!y || row.dataset.year === y) &&
+          (!r || row.dataset.region === r) &&
+          (!t || row.dataset.tier === t);
+        row.style.display = matches ? '' : 'none';
+        if (matches) visible++;
+      });
+      if (countEl) {
+        countEl.textContent = `${visible} / ${rows.length}`;
+      }
+    }
+
+    [search, year, region, tier].forEach((el) => {
+      if (!el) return;
+      el.addEventListener('input', update);
+      el.addEventListener('change', update);
+    });
+    update();
+  });
+</script>

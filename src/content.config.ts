@@ -17,4 +17,18 @@ const resume = defineCollection({
   }),
 });
 
-export const collections = { resume };
+const campaigns = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/campaigns' }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    dateRange: z.string(),
+    products: z.array(z.string()),
+    brandPartner: z.string().optional(),
+    summary: z.string(),
+    heroImage: z.string().optional(),
+    order: z.number().default(99),
+  }),
+});
+
+export const collections = { resume, campaigns };

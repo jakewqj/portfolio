@@ -1,2 +1,7 @@
 User-agent: *
 Disallow: /
+Allow: /portfolio/coverage/
+Allow: /portfolio/sitemap-index.xml
+Allow: /portfolio/sitemap-0.xml
+
+Sitemap: https://jakewqj.github.io/portfolio/sitemap-index.xml

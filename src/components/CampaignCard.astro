@@ -1,0 +1,51 @@
+---
+import { formatReach } from '../lib/coverage';
+
+interface Props {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  dateRange: string;
+  heroImage?: string;
+  clippingCount: number;
+  totalReach: number;
+}
+
+const { slug, title, subtitle, dateRange, heroImage, clippingCount, totalReach } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const href = `${base}/coverage/${slug}/`;
+const cover = heroImage ? `${base}/coverage/screenshots/${heroImage}` : null;
+---
+<a
+  href={href}
+  class="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all hover:-translate-y-0.5 hover:border-zinc-400 hover:shadow-lg"
+>
+  <div class="relative aspect-[4/3] w-full overflow-hidden bg-zinc-100">
+    {cover ? (
+      <img
+        src={cover}
+        alt={title}
+        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ) : (
+      <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-100">
+        <span class="text-xs uppercase tracking-widest text-zinc-400">Campaign</span>
+      </div>
+    )}
+    <div class="absolute right-3 top-3 rounded-full bg-zinc-900/80 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur">
+      {clippingCount} placements
+    </div>
+  </div>
+  <div class="flex flex-1 flex-col gap-1 p-5">
+    <p class="text-[11px] uppercase tracking-widest text-zinc-400">{dateRange}</p>
+    <h3 class="text-base font-semibold tracking-tight text-zinc-900 group-hover:text-zinc-700">
+      {title}
+    </h3>
+    {subtitle && <p class="text-sm text-zinc-500">{subtitle}</p>}
+    <div class="mt-3 flex items-baseline gap-1.5 border-t border-zinc-100 pt-3 text-zinc-600">
+      <span class="text-xl font-semibold tracking-tight text-zinc-900">{formatReach(totalReach)}</span>
+      <span class="text-xs text-zinc-500">cumulative reach</span>
+    </div>
+  </div>
+</a>

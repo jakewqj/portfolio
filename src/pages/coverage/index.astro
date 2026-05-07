@@ -1,0 +1,143 @@
+---
+import Base from '../../layouts/Base.astro';
+import ByTheNumbers from '../../components/ByTheNumbers.astro';
+import CampaignCard from '../../components/CampaignCard.astro';
+import ScreenshotWall from '../../components/ScreenshotWall.astro';
+import CoverageTable from '../../components/CoverageTable.astro';
+import { loadCoverage, loadHighlights, formatReach } from '../../lib/coverage';
+import { getCollection } from 'astro:content';
+
+const coverage = loadCoverage();
+const highlights = loadHighlights();
+const campaigns = (await getCollection('campaigns')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
+
+const yearsCount = Object.keys(coverage.totals.by_year).length;
+const regionsCount = coverage.totals.regions.length;
+const awardCount = highlights.awards.length;
+
+// Per-campaign metrics (for cards).
+const campaignStats = Object.fromEntries(
+  campaigns.map((c) => {
+    const slug = c.id.replace(/\.md$/, '');
+    const clippings = coverage.clippings.filter((x) => x.campaign === slug);
+    const totalReach = clippings.reduce((acc, x) => acc + (x.reach ?? 0), 0);
+    return [slug, { count: clippings.length, totalReach }];
+  })
+);
+
+// Highlights — featured screenshots on overview.
+const highlightClippings = highlights.overview_highlights
+  .map((id) => coverage.clippings.find((c) => c.id === id))
+  .filter(Boolean) as typeof coverage.clippings;
+---
+<Base
+  title="PR Coverage — Jake Wu / Donner Music"
+  description={`${formatReach(coverage.totals.cumulative_reach)}+ cumulative media reach across ${coverage.totals.outlets} outlets in ${regionsCount} markets. Donner Music PR coverage 2023–2026.`}
+  htmlLang="en"
+  noindex={false}
+  ogImage="/portfolio/coverage/og-cover.jpg"
+>
+  <div class="bg-zinc-50">
+    <header class="bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <p class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Press Coverage Book</p>
+        <h1 class="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl">
+          Donner Music — PR Coverage
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 md:text-lg">
+          Four years of media coverage I've led for Donner Music as Senior Brand PR Manager — across global instrument-vertical press, the synth and audio communities, and mainstream consumer media in the US, UK, Europe, Japan, and China.
+        </p>
+        <p class="mt-4 text-xs text-zinc-400">
+          Last updated {new Date(coverage.generated_at).toISOString().slice(0, 10)} · Source: internal PR coverage tracker
+        </p>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <ByTheNumbers
+        reach={coverage.totals.cumulative_reach}
+        outlets={coverage.totals.outlets}
+        yearsCount={yearsCount}
+        regions={regionsCount}
+        awards={awardCount}
+      />
+    </div>
+
+    <section class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold tracking-tight text-zinc-900">Featured Campaigns</h2>
+        <p class="mt-1 text-sm text-zinc-500">Selected stories with sustained press cycles. Click into a card for the full clipping list.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {campaigns.map((c) => {
+          const slug = c.id.replace(/\.md$/, '');
+          const stats = campaignStats[slug] ?? { count: 0, totalReach: 0 };
+          return (
+            <CampaignCard
+              slug={slug}
+              title={c.data.title}
+              subtitle={c.data.subtitle}
+              dateRange={c.data.dateRange}
+              heroImage={c.data.heroImage}
+              clippingCount={stats.count}
+              totalReach={stats.totalReach}
+            />
+          );
+        })}
+      </div>
+    </section>
+
+    {highlightClippings.length > 0 && (
+      <section class="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold tracking-tight text-zinc-900">Highlights</h2>
+          <p class="mt-1 text-sm text-zinc-500">A walk-through of the most prominent placements.</p>
+        </div>
+        <ScreenshotWall clippings={highlightClippings} />
+      </section>
+    )}
+
+    {highlights.awards.length > 0 && (
+      <section class="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold tracking-tight text-zinc-900">Awards & Editor's Picks</h2>
+        </div>
+        <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
+          {highlights.awards.map((a) => (
+            <li class="flex items-start gap-3 rounded-lg border border-zinc-200 bg-white p-4">
+              <div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-zinc-900">{a.product} — {a.award}</p>
+                <p class="text-sm text-zinc-500">{a.outlet} · {a.year}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <h2 class="text-xl font-semibold tracking-tight text-zinc-900">All Coverage</h2>
+          <p class="mt-1 text-sm text-zinc-500">{coverage.totals.clippings} clippings across {coverage.totals.outlets} outlets. Filter by year, region, or outlet tier.</p>
+        </div>
+      </div>
+      <CoverageTable clippings={coverage.clippings} />
+    </section>
+
+    <footer class="border-t border-zinc-200 bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-8 text-xs text-zinc-400 sm:px-8">
+        Coverage data is maintained in an internal tracker and synced to this page on each release.
+        Reach figures represent each outlet's monthly unique visitors at time of capture and are presented as cumulative potential exposure, not verified impressions.
+      </div>
+    </footer>
+  </div>
+</Base>

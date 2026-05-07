@@ -1,0 +1,298 @@
+# Outlet metadata — used by the import script for dedupe and by the site for logos/tier badges.
+# Add new outlets as they appear. The script logs unrecognized outlet names; copy them into `aliases`.
+#
+# Fields:
+#   name      canonical display name
+#   aliases   raw spellings as they appear in the xlsx (case-insensitive)
+#   domain    main website domain (used for region inference + logo URL fallback)
+#   tier      1 = global flagship, 2 = strong vertical, 3 = niche / blog / aggregator
+#   region    US / UK / EU / DE / JP / CN / AU / CA / BR / NW (worldwide)
+#   category  instrument-vertical | music-culture | mass-media | other
+#   logo      file under public/coverage/logos/ (optional)
+#   default_muv  baseline reach if a row's reach cell is blank (optional)
+
+outlets:
+  # ── Tier 1 — Global flagships ────────────────────────────────────
+  - name: Guitar World
+    aliases: ["Guiar World", "guitarworld", "Guitar World Magazine"]
+    domain: guitarworld.com
+    tier: 1
+    region: US
+    category: instrument-vertical
+    default_muv: 6875000
+
+  - name: MusicRadar
+    aliases: ["Music Radar", "musicradar"]
+    domain: musicradar.com
+    tier: 1
+    region: UK
+    category: instrument-vertical
+    default_muv: 5400000
+
+  - name: Premier Guitar
+    aliases: ["premier guitar", "PremierGuitar"]
+    domain: premierguitar.com
+    tier: 1
+    region: US
+    category: instrument-vertical
+    default_muv: 878200
+
+  - name: Guitar Player
+    aliases: ["guitar player", "Guitar Player Magazine"]
+    domain: guitarplayer.com
+    tier: 1
+    region: US
+    category: instrument-vertical
+    default_muv: 1721000
+
+  - name: Guitar.com
+    aliases: ["guitar.com"]
+    domain: guitar.com
+    tier: 1
+    region: UK
+    category: instrument-vertical
+    default_muv: 1758000
+
+  - name: Pianist Magazine
+    aliases: ["Pianist", "pianist magazine"]
+    domain: pianistmagazine.com
+    tier: 1
+    region: UK
+    category: instrument-vertical
+
+  - name: Sound on Sound
+    aliases: ["SOUNDONSOUND", "Sound On Sound", "soundonsound"]
+    domain: soundonsound.com
+    tier: 1
+    region: UK
+    category: instrument-vertical
+
+  - name: Music Inc
+    aliases: ["Music Inc Magazine", "MusicInc"]
+    domain: musicincmag.com
+    tier: 1
+    region: US
+    category: instrument-vertical
+    default_muv: 5000
+
+  - name: New York Times
+    aliases: ["NYT", "nytimes"]
+    domain: nytimes.com
+    tier: 1
+    region: US
+    category: mass-media
+
+  - name: TomsGuide
+    aliases: ["Tom's Guide", "Toms Guide"]
+    domain: tomsguide.com
+    tier: 1
+    region: US
+    category: mass-media
+
+  - name: Yahoo
+    aliases: ["yahoo", "Yahoo News"]
+    domain: yahoo.com
+    tier: 1
+    region: US
+    category: mass-media
+
+  # ── Tier 2 — Strong verticals ────────────────────────────────────
+  - name: Guitar Interactive
+    aliases: ["Guitar Interactive Magazine", "GI Magazine"]
+    domain: iguitarmag.com
+    tier: 2
+    region: UK
+    category: instrument-vertical
+
+  - name: Performer Magazine
+    aliases: ["performermag", "Performer"]
+    domain: performermag.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+    default_muv: 19645
+
+  - name: Magnetic Mag
+    aliases: ["magneticmag", "Magnetic Magazine"]
+    domain: magneticmag.com
+    tier: 2
+    region: US
+    category: music-culture
+
+  - name: Synth Anatomy
+    aliases: ["Synthanatomy", "synth anatomy"]
+    domain: synthanatomy.com
+    tier: 2
+    region: DE
+    category: instrument-vertical
+
+  - name: Synthtopia
+    aliases: ["synthtopia"]
+    domain: synthtopia.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+
+  - name: Matrixsynth
+    aliases: ["Matrix Synth", "matrixsynth"]
+    domain: matrixsynth.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+
+  - name: Music Tech
+    aliases: ["MusicTech", "musictech"]
+    domain: musictech.com
+    tier: 2
+    region: UK
+    category: instrument-vertical
+
+  - name: Vintage Guitar
+    aliases: ["vintageguitar", "Vintage Guitar Magazine"]
+    domain: vintageguitar.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+    default_muv: 19645
+
+  - name: MMR
+    aliases: ["mmrmagazine", "Musical Merchandise Review"]
+    domain: mmrmagazine.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+    default_muv: 8400
+
+  - name: Music Connection
+    aliases: ["musicconnection"]
+    domain: musicconnection.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+    default_muv: 107100
+
+  - name: Worship Musician
+    aliases: ["Worship Musician Magazine"]
+    domain: worshipmusicianmagazine.com
+    tier: 2
+    region: US
+    category: music-culture
+
+  - name: Ultimate Guitar
+    aliases: ["ultimate-guitar", "ultimateguitar"]
+    domain: ultimate-guitar.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+
+  - name: Gearspace
+    aliases: ["gearspace", "Gearslutz"]
+    domain: gearspace.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+
+  - name: Mikesgig
+    aliases: ["mikesgig"]
+    domain: mikesgig.com
+    tier: 3
+    region: US
+    category: instrument-vertical
+    default_muv: 5200
+
+  - name: Cutaway Guitar Magazine
+    aliases: ["cutawayguitarmagazine", "Cutaway"]
+    domain: cutawayguitarmagazine.com
+    tier: 3
+    region: ES
+    category: instrument-vertical
+    default_muv: 18111
+
+  - name: Geekazine
+    aliases: ["geekazine"]
+    domain: geekazine.com
+    tier: 3
+    region: US
+    category: mass-media
+
+  - name: digitalDrummer
+    aliases: ["digital drummer", "Digital Drummer"]
+    domain: digitaldrummermag.com
+    tier: 2
+    region: AU
+    category: instrument-vertical
+
+  - name: Upbeat Daily
+    aliases: ["upbeatdaily", "upbeat daily"]
+    domain: upbeatdaily.com
+    tier: 3
+    region: US
+    category: music-culture
+
+  - name: Media Mikes
+    aliases: ["mediamikes", "media mikes"]
+    domain: mediamikes.com
+    tier: 3
+    region: US
+    category: mass-media
+
+  - name: Emilyreview
+    aliases: ["Emily Review"]
+    domain: emilyreview.com
+    tier: 3
+    region: US
+    category: mass-media
+
+  - name: ynetnews
+    aliases: ["YNet News"]
+    domain: ynetnews.com
+    tier: 2
+    region: IL
+    category: mass-media
+
+  # ── 中文媒体 ─────────────────────────────────────────────────────
+  - name: Midifan
+    aliases: ["MIDIFAN", "midifan", "MIDIFAN-公众号", "Midifan 公众号"]
+    domain: midifan.com
+    tier: 1
+    region: CN
+    category: instrument-vertical
+    default_muv: 167861
+
+  - name: 叉烧网
+    aliases: ["叉烧网", "chashao"]
+    domain: izaosao.com
+    tier: 2
+    region: CN
+    category: instrument-vertical
+
+  - name: 新华网
+    aliases: ["新华网", "Xinhuanet"]
+    domain: xinhuanet.com
+    tier: 1
+    region: CN
+    category: mass-media
+
+# Campaign matching rules. First match wins. Used by the import script to tag clippings.
+# Patterns are matched (case-insensitive) against the "推广产品/项目" column.
+# Add rules here when launching new featured campaigns.
+campaigns:
+  - slug: namm-2026
+    patterns: ["NAMM 2026", "namm2026", "NAMM2026"]
+  - slug: triple-threat
+    patterns: ["Triple Threat", "TripleThreat", "triple-threat"]
+  - slug: hush-x
+    patterns: ["HUSH-X", "HUSH X", "HUHS-X", "HUSHX"]
+  - slug: l1-synth
+    patterns: ["\\bL1\\b"]   # word-boundary regex to avoid matching L10/L100/etc.
+
+# Domain → region fallback (used when row's region cell is empty, e.g. 2023 sheet).
+domain_region_fallback:
+  ".com": US
+  ".co.uk": UK
+  ".de": DE
+  ".jp": JP
+  ".cn": CN
+  ".com.au": AU
+  ".com.br": BR
+  ".ca": CA

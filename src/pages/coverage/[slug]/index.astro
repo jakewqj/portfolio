@@ -1,0 +1,104 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ScreenshotWall from '../../../components/ScreenshotWall.astro';
+import CoverageTable from '../../../components/CoverageTable.astro';
+import { loadCoverage, loadHighlights, formatReach, clippingsForCampaign } from '../../../lib/coverage';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const campaigns = await getCollection('campaigns');
+  return campaigns.map((c) => ({
+    params: { slug: c.id.replace(/\.md$/, '') },
+    props: { campaign: c },
+  }));
+}
+
+const { campaign } = Astro.props;
+const slug = campaign.id.replace(/\.md$/, '');
+const { Content } = await render(campaign);
+
+const clippings = clippingsForCampaign(slug);
+const totalReach = clippings.reduce((acc, c) => acc + (c.reach ?? 0), 0);
+const tier1Count = clippings.filter((c) => c.outlet_tier === 1).length;
+
+const highlights = loadHighlights();
+const featuredIds = highlights.campaigns[slug]?.clippings_to_feature ?? [];
+const featured = featuredIds
+  .map((id) => clippings.find((c) => c.id === id))
+  .filter(Boolean) as typeof clippings;
+
+// If Jake hasn't curated highlights yet, fall back to the top 6 by reach.
+const displayHighlights = featured.length > 0
+  ? featured
+  : clippings.filter((c) => c.outlet_tier === 1).slice(0, 6);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const heroImg = campaign.data.heroImage
+  ? `${base}/coverage/screenshots/${campaign.data.heroImage}`
+  : null;
+---
+<Base
+  title={`${campaign.data.title} — Press Coverage`}
+  description={campaign.data.summary}
+  htmlLang="en"
+  noindex={false}
+  ogImage={campaign.data.heroImage ? `/portfolio/coverage/screenshots/${campaign.data.heroImage}` : undefined}
+>
+  <div class="bg-zinc-50">
+    <header class="bg-white">
+      <div class="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
+        <a href={`${base}/coverage/`} class="inline-flex items-center gap-1 text-sm text-zinc-500 hover:text-zinc-900">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          All coverage
+        </a>
+        <p class="mt-6 text-xs font-semibold uppercase tracking-widest text-zinc-500">Featured Campaign</p>
+        <h1 class="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+          {campaign.data.title}
+        </h1>
+        {campaign.data.subtitle && (
+          <p class="mt-2 text-lg text-zinc-600">{campaign.data.subtitle}</p>
+        )}
+        <p class="mt-2 text-sm text-zinc-500">
+          {campaign.data.dateRange}
+          {campaign.data.brandPartner && ` · ${campaign.data.brandPartner}`}
+        </p>
+
+        <div class="mt-8 grid grid-cols-3 gap-6 border-y border-zinc-200 py-6">
+          <div>
+            <div class="text-3xl font-semibold tracking-tight text-zinc-900">{clippings.length}</div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-zinc-500">Placements</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold tracking-tight text-zinc-900">{formatReach(totalReach)}</div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-zinc-500">Cumulative Reach</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold tracking-tight text-zinc-900">{tier1Count}</div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-zinc-500">Tier 1 Outlets</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <article class="mx-auto max-w-4xl px-5 py-12 sm:px-8">
+      <div class="resume-prose">
+        <Content />
+      </div>
+    </article>
+
+    {displayHighlights.length > 0 && (
+      <section class="mx-auto max-w-6xl px-5 pb-12 sm:px-8">
+        <h2 class="mb-6 text-xl font-semibold tracking-tight text-zinc-900">Press Highlights</h2>
+        <ScreenshotWall clippings={displayHighlights} />
+      </section>
+    )}
+
+    <section class="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-zinc-900">All clippings</h2>
+      <CoverageTable clippings={clippings} showFilters={false} />
+    </section>
+  </div>
+</Base>
