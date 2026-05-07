@@ -4,10 +4,12 @@ nameEn: Jake Wu
 title: Senior Brand PR Manager
 location: Guangzhou, China
 tagline: Bilingual EN / ZH
-emailParts: ["jake.wu", "donnermusic.com"]
+emailParts:
+  - jakewqj
+  - gmail.com
 phoneFull: "+8613570340684"
-phoneObfuscated: "+86 13570 ••• 0684"
-linkedin: "https://www.linkedin.com/in/jake-wu-qijie/"
+phoneObfuscated: +86 13570 ••• 0684
+linkedin: https://www.linkedin.com/in/jake-wu-qijie/
 lang: en
 ---
 

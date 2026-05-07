@@ -4,10 +4,12 @@ nameEn: Jake Wu
 title: 高级品牌公关经理
 location: 广州
 tagline: 中英双语
-emailParts: ["jake.wu", "donnermusic.com"]
+emailParts:
+  - jakewqj
+  - gmail.com
 phoneFull: "+8613570340684"
-phoneObfuscated: "+86 13570 ••• 0684"
-linkedin: "https://www.linkedin.com/in/jake-wu-qijie/"
+phoneObfuscated: +86 13570 ••• 0684
+linkedin: https://www.linkedin.com/in/jake-wu-qijie/
 lang: zh
 ---
 
