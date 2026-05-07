@@ -23,7 +23,7 @@ Donner is a leading global DTC instrument brand with products across guitars, el
 
 **Media Relations**
 
-- Built and maintain a guitar/instrument media network across the US, UK, Europe, and Japan, including Guitar World, MusicRadar, Premier Guitar, and Pianist
+- Built and maintain a network of leading instrument-industry media across the US, UK, Europe, and Japan, including Guitar World, MusicRadar, Premier Guitar, and Pianist
 - 100+ pieces of editorial coverage to date — product reviews, news features, and buyer's guides
 - Multiple industry awards: Guitar Player Editor's Pick, Guitar World Gold Award, Music Inc Editor's Choice
 
@@ -36,8 +36,9 @@ Donner is a leading global DTC instrument brand with products across guitars, el
 
 **Trade Shows & Events**
 
-- PR lead for NAMM Show 2022, 2025, and 2026: media outreach, on-site interview coordination, and post-show follow-through
-- Planned the live performance and fan meet at Music China 2023
+- PR lead across six editions of The NAMM Show (2022–2026) and Music China in Shanghai (2022–2025): media outreach, on-site interview coordination, and post-show follow-through
+- Planned and produced live performances, press interviews, and fan meets — including the 2026 MIYAVI Tokyo product launch and multiple Donner Live shows
+- Represented Donner at Beijing Modular Festival (2023–2025), leading on-site planning and execution
 
 **AI Workflows**
 
@@ -76,6 +77,6 @@ Guangdong Polytechnic Normal University | BA, English (International Trade) | 20
 - **Public Relations**: media relations, press releases, crisis communications, brand strategy
 - **Partnerships**: artist signings, brand collaborations, software / education tie-ins, trade show BD
 - **Content**: bilingual EN / ZH writing, product reviews, long-form interviews, SEO content
-- **Operations**: cross-border e-commerce, Amazon storefront management, data analysis
+- **Operations**: cross-border e-commerce, DTC storefront build & operations, Amazon (SC/VC) account management, data analysis
 - **Tools**: AI-assisted workflows (Claude Code), CRM, Google Workspace, Obsidian
 - **Languages**: Mandarin / Cantonese (native), English (fluent, working language)
