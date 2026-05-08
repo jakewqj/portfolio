@@ -34,18 +34,25 @@ campaigns:
 #   products       list of award-winning products (use display names)
 #   year           year of the award
 #   note           any extra context to appear under the entry (optional)
+#   badge          file under public/coverage/awards/ — award seal / laurel / sticker (preferred hero visual)
+#   badge_kind     "seal"  → transparent badge, displayed centered on a tinted backdrop
+#                  "page"  → full-bleed magazine clipping, displayed edge-to-edge
 awards:
   - outlet: Guitar World
     outlet_zh: 美国《Guitar World》
     award: Performance Gold Award
     products: ["Donner Circle Looper Pedal"]
     year: 2024
+    badge: guitar-world-performance-gold.png
+    badge_kind: seal
 
   - outlet: Guitar World
     outlet_zh: 美国《Guitar World》
     award: Best Gear of the Year 2024
     products: ["Triple Threat", "HUSH-X"]
     year: 2024
+    badge: guitar-world-best-gear-2024.png
+    badge_kind: page
 
   - outlet: Total Guitar
     outlet_zh: 英国《Total Guitar》
@@ -53,6 +60,8 @@ awards:
     issue: August 2024, Issue 386
     products: ["Donner × Third Man Hardware — Triple Threat"]
     year: 2024
+    badge: total-guitar-best-buy.png
+    badge_kind: seal
 
   - outlet: Guitar Player
     outlet_zh: 美国《Guitar Player》
@@ -60,6 +69,8 @@ awards:
     issue: May 2024 Issue
     products: ["Donner × Third Man Hardware — Triple Threat"]
     year: 2024
+    badge: guitar-player-editors-pick.png
+    badge_kind: seal
 
   - outlet: Music Inc
     outlet_zh: 美国《Music Inc.》
@@ -67,9 +78,13 @@ awards:
     issue: NAMM Show official publication
     products: ["Donner × Third Man Hardware — Triple Threat"]
     year: 2024
+    badge: music-inc-namm-2024-editors-choice.png
+    badge_kind: seal
 
   - outlet: Magnetic Magazine
     outlet_zh: 美国 Magnetic Magazine
     award: 2025 Editor's Pick
     products: ["Essential L1 (analog mono synth)", "HUSH-I Pro (headless travel acoustic)"]
     year: 2025
+    badge: magnetic-editors-choice-2025.png
+    badge_kind: page

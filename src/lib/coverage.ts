@@ -47,6 +47,8 @@ export interface Highlights {
     products: string[];
     year: number;
     note?: string;
+    badge?: string;
+    badge_kind?: 'seal' | 'page';
   }[];
 }
 
