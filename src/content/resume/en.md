@@ -28,6 +28,7 @@ Donner is a leading global DTC instrument brand with products across guitars, el
 - Built and maintain a network of leading instrument-industry media across the US, UK, Europe, and Japan, including Guitar World, MusicRadar, Premier Guitar, and Pianist
 - 100+ pieces of editorial coverage to date — product reviews, news features, and buyer's guides
 - Multiple industry awards: Guitar Player Editor's Pick, Guitar World Gold Award, Music Inc Editor's Choice
+- Press coverage book: [jakewqj.github.io/portfolio/coverage](https://jakewqj.github.io/portfolio/coverage/)
 
 **Brand Partnerships**
 
