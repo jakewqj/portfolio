@@ -25,18 +25,51 @@ campaigns:
     cover: l1-cover.jpg
     clippings_to_feature: []
 
-# Awards / lists worth calling out on the overview page.
-# These are static — easier to maintain by hand than to mine from the xlsx.
+# Awards / Editor's Picks — sourced from the 2025 brand partner & media doc.
+# Each entry can include:
+#   outlet         flagship outlet name (English-first)
+#   outlet_zh      Chinese-language outlet name (optional, for hover/secondary line)
+#   award          award title (English where official, otherwise the original)
+#   issue          which print issue / event the award appeared in (optional)
+#   products       list of award-winning products (use display names)
+#   year           year of the award
+#   note           any extra context to appear under the entry (optional)
 awards:
-  - product: Arena 2000
-    award: Editor's Pick
-    outlet: Guitar Player
-    year: 2023
-  - product: DST-700
-    award: Gold Award
-    outlet: Guitar World
-    year: 2025
-  - product: DDA-100
-    award: Editor's Choice
-    outlet: Music Inc
+  - outlet: Guitar World
+    outlet_zh: 美国《Guitar World》
+    award: Performance Gold Award
+    products: ["Donner Circle Looper Pedal"]
     year: 2024
+
+  - outlet: Guitar World
+    outlet_zh: 美国《Guitar World》
+    award: Best Gear of the Year 2024
+    products: ["Triple Threat", "HUSH-X"]
+    year: 2024
+
+  - outlet: Total Guitar
+    outlet_zh: 英国《Total Guitar》
+    award: Best Buy Award
+    issue: August 2024, Issue 386
+    products: ["Donner × Third Man Hardware — Triple Threat"]
+    year: 2024
+
+  - outlet: Guitar Player
+    outlet_zh: 美国《Guitar Player》
+    award: Editor's Pick
+    issue: May 2024 Issue
+    products: ["Donner × Third Man Hardware — Triple Threat"]
+    year: 2024
+
+  - outlet: Music Inc
+    outlet_zh: 美国《Music Inc.》
+    award: NAMM 2024 Editor's Choice
+    issue: NAMM Show official publication
+    products: ["Donner × Third Man Hardware — Triple Threat"]
+    year: 2024
+
+  - outlet: Magnetic Magazine
+    outlet_zh: 美国 Magnetic Magazine
+    award: 2025 Editor's Pick
+    products: ["Essential L1 (analog mono synth)", "HUSH-I Pro (headless travel acoustic)"]
+    year: 2025

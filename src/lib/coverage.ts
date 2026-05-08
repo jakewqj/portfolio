@@ -39,7 +39,15 @@ export interface Highlights {
     string,
     { cover?: string; clippings_to_feature: string[] }
   >;
-  awards: { product: string; award: string; outlet: string; year: number }[];
+  awards: {
+    outlet: string;
+    outlet_zh?: string;
+    award: string;
+    issue?: string;
+    products: string[];
+    year: number;
+    note?: string;
+  }[];
 }
 
 const root = path.resolve(process.cwd());
