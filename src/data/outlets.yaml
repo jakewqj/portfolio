@@ -282,7 +282,9 @@ campaigns:
   - slug: triple-threat
     patterns: ["Triple Threat", "TripleThreat", "triple-threat"]
   - slug: hush-x
-    patterns: ["HUSH-X", "HUSH X", "HUHS-X", "HUSHX"]
+    # Campaign covers the entire HUSH guitar family (HUSH-X / HUSH-I / HUSH-X PRO / HUSH-C / HUSH I EVO 2).
+    # Last pattern matches the brand prefix alone (e.g. "产品营销 - HUSH") on a word boundary.
+    patterns: ["HUSH-X", "HUSH X", "HUHS-X", "HUSHX", "HUSH-I", "HUSH I", "HUSH-C", "\\bHUSH\\b"]
   - slug: l1-synth
     patterns: ["\\bL1\\b"]   # word-boundary regex to avoid matching L10/L100/etc.
 

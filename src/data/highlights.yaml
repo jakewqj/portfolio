@@ -12,18 +12,46 @@ overview_highlights: []
 # Per-campaign feature picks — show up at the top of each campaign detail page.
 # If empty, the campaign page renders all of its clippings as text rows.
 campaigns:
+  # Curation rules for clippings_to_feature:
+  #   1. One clipping per outlet (dedupe).
+  #   2. Prefer outlet-website News or Reviews over Round-up / Social / Ad / Deals.
+  #   3. Maximize geographic spread across the highlights.
   triple-threat:
     cover: triple-threat-cover.jpg
-    clippings_to_feature: []
+    clippings_to_feature:
+      - 2024-05-15-total-guitar       # UK · Review · Best Buy Award winner
+      - 2024-05-15-guitar-player      # UK · Review · Editor's Pick winner
+      - 2025-06-03-musicradar         # US · Review · 5.2M reach
+      - 2024-02-15-guitar-world-3     # US · Review
+      - 2024-08-15-premier-guitar     # US · Review
+      - 2024-02-15-新华网                # CN · News · Tier 1 mainstream
   namm-2026:
     cover: namm-2026-cover.jpg
-    clippings_to_feature: []
+    clippings_to_feature:
+      - 2026-01-24-premier-guitar     # US · Review
+      - 2026-01-23-guitar-world       # US · News · 7.5M
+      - 2026-01-23-musicradar         # US · News · 8.7M
+      - 2026-01-23-magnetic-mag       # US · News
+      - 2026-01-23-搜狐                 # CN · News · 61M reach
+      - 2026-01-02-midifan            # CN · News · Tier 1
   hush-x:
     cover: hush-x-cover.jpg
-    clippings_to_feature: []
+    clippings_to_feature:
+      - 2025-09-12-guitarmagazinejp   # JP · Review · Guitar Magazine JP (must-include)
+      - 2025-06-30-guitar-world       # US · Review · 10.8M
+      - 2024-08-15-musicradar-2       # UK · News · 4.5M
+      - 2025-01-25-premier-guitar     # US · Review
+      - 2025-01-06-midifan            # CN · News · Tier 1
+      - 2025-03-20-musicay--mercado   # BR · News
   l1-synth:
     cover: l1-cover.jpg
-    clippings_to_feature: []
+    clippings_to_feature:
+      - 2025-08-10-musicradar         # UK · Review · 4.7M
+      - 2024-01-01-gearspace          # UK · Review · 2.4M
+      - 2024-01-01-synth-anatomy-2    # US · News
+      - 2025-09-08-magnetic-mag-2     # US · Review
+      - 2025-09-30-synthmagazine      # DE · Review
+      - 2025-08-01-midifan            # CN · News · Tier 1
 
 # Awards / Editor's Picks — sourced from the 2025 brand partner & media doc.
 # Each entry can include:
