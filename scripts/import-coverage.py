@@ -34,9 +34,13 @@ LOG_FILE = REPO_ROOT / ".coverage-import.log"
 # `reach_alt` covers an alternate column where reach was sometimes typed by mistake.
 # In the 2023 sheet, ~74 rows have the MUV value in col 11 (RANK) instead of col 10
 # (Monthly Visitors); falling back recovers them without re-touching the xlsx.
+#
+# 2023 sheet has no separate '内容形式' column; the legacy '形式' col 7 holds the
+# content type (通稿 / 测评 / 榜单 / 约稿 / etc.). Map it as content_type and let
+# format default to 'online' (all rows pass the http-URL filter).
 SHEETS = {
     "2023": {"date": 1, "outlet_category": 2, "product": 3, "outlet": 4, "url": 5,
-             "format": 7, "reach": 10, "reach_alt": 11},
+             "content_type": 7, "reach": 10, "reach_alt": 11},
     "2024 Coverage": {"date": 1, "region": 2, "product": 4, "outlet": 5,
                       "outlet_category": 6, "url": 7, "format": 8, "content_type": 9,
                       "reach": 10},
@@ -57,7 +61,26 @@ OUTLET_CATEGORY_MAP = {
     "Newswire": "newswire",
 }
 
-FORMAT_MAP = {"线上": "online", "印刷": "print", "约稿": "online"}
+FORMAT_MAP = {"线上": "online", "印刷": "print"}
+
+# Legacy 2023 '形式' values → 2024+ content_type taxonomy.
+CONTENT_TYPE_MAP = {
+    "通稿": "News",
+    "通稿宣发": "News",
+    "通稿联系报道": "News",
+    "约稿": "Feature",
+    "测评": "Review",
+    "文字测评": "Review",
+    "Youtube视频测评": "Review",
+    "榜单": "Round-up",
+    "推荐": "Round-up",
+    "媒体购买": "Ad",
+    "广告": "Ad",
+    "社媒": "Social",
+    "媒体转发": "Social",
+    "媒体转载": "Social",
+    "内容合作": "Feature",
+}
 
 
 def slugify(text: str) -> str:
@@ -251,12 +274,18 @@ def main():
             content_type = None
             if "content_type" in cmap:
                 ct_raw = ws.cell(row=r, column=cmap["content_type"]).value
-                content_type = str(ct_raw).strip() if ct_raw else None
+                if ct_raw:
+                    ct_str = str(ct_raw).strip()
+                    content_type = CONTENT_TYPE_MAP.get(ct_str, ct_str)
 
             fmt = None
             if "format" in cmap:
                 fmt_raw = ws.cell(row=r, column=cmap["format"]).value
                 fmt = FORMAT_MAP.get(str(fmt_raw).strip(), str(fmt_raw).strip()) if fmt_raw else None
+            # 2023 sheet has no media-format column; everything that survived the
+            # http-URL filter is web coverage.
+            if fmt is None and "format" not in cmap:
+                fmt = "online"
 
             base_id = f"{date_iso}-{slugify(outlet_name)}"
             count = seen_ids.get(base_id, 0)
