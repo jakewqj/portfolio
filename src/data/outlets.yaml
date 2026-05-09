@@ -95,6 +95,9 @@ outlets:
     tier: 1
     region: US
     category: mass-media
+    # Matches the 3.39B figure the xlsx already uses for other Yahoo rows; covers
+    # blank-reach finance.yahoo.com / yahoo.com news rows from 2023.
+    default_muv: 3391000000
 
   # ── Tier 2 — Strong verticals ────────────────────────────────────
   - name: Guitar Interactive
@@ -221,6 +224,7 @@ outlets:
     tier: 2
     region: AU
     category: instrument-vertical
+    default_muv: 15000
 
   - name: Upbeat Daily
     aliases: ["upbeatdaily", "upbeat daily"]
@@ -228,6 +232,7 @@ outlets:
     tier: 3
     region: US
     category: music-culture
+    default_muv: 9000
 
   - name: Media Mikes
     aliases: ["mediamikes", "media mikes"]
@@ -235,6 +240,7 @@ outlets:
     tier: 3
     region: US
     category: mass-media
+    default_muv: 5000
 
   - name: Emilyreview
     aliases: ["Emily Review"]

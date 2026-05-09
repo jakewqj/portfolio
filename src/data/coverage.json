@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-08T15:48:49Z",
+  "generated_at": "2026-05-09T06:28:08Z",
   "source_xlsx": "PR coverages 20260507 - 副本.xlsx",
   "totals": {
     "clippings": 587,
-    "outlets": 212,
+    "outlets": 202,
     "regions": [
       "AU",
       "BR",
@@ -16,7 +16,7 @@
       "UK",
       "US"
     ],
-    "cumulative_reach": 14715905048,
+    "cumulative_reach": 20177644075,
     "by_year": {
       "2023": 176,
       "2024": 193,
@@ -800,12 +800,12 @@
       "url": "https://www.sohu.com/a/979293244_121124377"
     },
     {
-      "id": "2026-01-23-yahoo-tech",
+      "id": "2026-01-23-yahoo",
       "date": "2026-01-23",
       "year": 2026,
       "region": "US",
-      "outlet": "Yahoo Tech",
-      "outlet_tier": 3,
+      "outlet": "Yahoo",
+      "outlet_tier": 1,
       "outlet_category": "mass-media",
       "outlet_logo": null,
       "product": "展会 - NAMM 2026 - Groove 电鼓",
@@ -1184,12 +1184,12 @@
       "url": "https://viewer.joomag.com/wm-worship-guitar-player-buyers-guide-13-december-2025/0108063001764632869/p32?short="
     },
     {
-      "id": "2025-11-24-synthanothomy",
+      "id": "2025-11-24-synth-anatomy",
       "date": "2025-11-24",
       "year": 2025,
       "region": "US",
-      "outlet": "SynthAnothomy",
-      "outlet_tier": 3,
+      "outlet": "Synth Anatomy",
+      "outlet_tier": 2,
       "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "黑五营销 - Synth",
@@ -2864,12 +2864,12 @@
       "url": "https://mmrmagazine.com/clone/donner-launches-new-oura-series-pianos-blending-sound-home-design/"
     },
     {
-      "id": "2025-02-11-musicincmag",
+      "id": "2025-02-11-music-inc",
       "date": "2025-02-11",
       "year": 2025,
       "region": "US",
-      "outlet": "MusicIncMag",
-      "outlet_tier": 3,
+      "outlet": "Music Inc",
+      "outlet_tier": 1,
       "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "产品营销 - 电钢 - OURA",
@@ -3664,12 +3664,12 @@
       "url": "https://www.ultimate-guitar.com/news/gear/ive_been_reviewing_guitar_gear_for_5_years_these_are_my_5_all-time_favorite_pieces.html"
     },
     {
-      "id": "2024-08-15-synthetopia",
+      "id": "2024-08-15-synthtopia",
       "date": "2024-08-15",
       "year": 2024,
       "region": "US",
-      "outlet": "Synthetopia",
-      "outlet_tier": 3,
+      "outlet": "Synthtopia",
+      "outlet_tier": 2,
       "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "合成器 - D1",
@@ -4384,28 +4384,12 @@
       "url": "https://ventsmagazine.com/2024/02/27/the-toys-of-namm-2024/"
     },
     {
-      "id": "2024-05-15-total-guitar",
+      "id": "2024-05-15-tomsguide",
       "date": "2024-05-15",
       "year": 2024,
       "region": "US",
-      "outlet": "Total Guitar",
-      "outlet_tier": 3,
-      "outlet_category": "instrument-vertical",
-      "outlet_logo": null,
-      "product": "品牌合作 - 效果器 - Triple Threat",
-      "campaign": "triple-threat",
-      "content_type": "Review",
-      "format": "online",
-      "reach": 7757000,
-      "url": "https://www.guitarworld.com/reviews/third-man-hardware-x-donner-triple-threat"
-    },
-    {
-      "id": "2024-05-15-tomesguide",
-      "date": "2024-05-15",
-      "year": 2024,
-      "region": "US",
-      "outlet": "Tomesguide",
-      "outlet_tier": 3,
+      "outlet": "TomsGuide",
+      "outlet_tier": 1,
       "outlet_category": "other",
       "outlet_logo": null,
       "product": "营销 - PD",
@@ -4416,12 +4400,12 @@
       "url": "https://www.tomsguide.com/sales-events/epic-amazon-summer-sale-on-tech-heres-35-deals-id-buy-now-from-dollar9"
     },
     {
-      "id": "2024-05-15-tomesguide-2",
+      "id": "2024-05-15-tomsguide-2",
       "date": "2024-05-15",
       "year": 2024,
       "region": "US",
-      "outlet": "Tomesguide",
-      "outlet_tier": 3,
+      "outlet": "TomsGuide",
+      "outlet_tier": 1,
       "outlet_category": "other",
       "outlet_logo": null,
       "product": "营销 - PD",
@@ -4798,6 +4782,22 @@
       "format": "online",
       "reach": 7757000,
       "url": "https://www.guitarworld.com/news/donner-seeker-series-dst-600-dst-700"
+    },
+    {
+      "id": "2024-05-15-guitar-world-3",
+      "date": "2024-05-15",
+      "year": 2024,
+      "region": "US",
+      "outlet": "Guitar World",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
+      "outlet_logo": null,
+      "product": "品牌合作 - 效果器 - Triple Threat",
+      "campaign": "triple-threat",
+      "content_type": "Review",
+      "format": "online",
+      "reach": 7757000,
+      "url": "https://www.guitarworld.com/reviews/third-man-hardware-x-donner-triple-threat"
     },
     {
       "id": "2024-05-15-guitar-player",
@@ -5856,12 +5856,12 @@
       "url": "https://2ly.link/21FwX"
     },
     {
-      "id": "2024-01-01-synthetopia",
+      "id": "2024-01-01-synthtopia",
       "date": "2024-01-01",
       "year": 2024,
       "region": "US",
-      "outlet": "Synthetopia",
-      "outlet_tier": 3,
+      "outlet": "Synthtopia",
+      "outlet_tier": 2,
       "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "展会 - 上海展 - L1",
@@ -6620,7 +6620,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 29000000,
       "url": "https://www.tomsguide.com/best-picks/best-cheap-wireless-earbuds"
     },
     {
@@ -6636,23 +6636,23 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 212400,
       "url": "https://keyboardkraze.com/amazon-prime-day-digital-piano-deals/"
     },
     {
-      "id": "2023-10-08-synthtopia-自转载",
+      "id": "2023-10-08-synthtopia",
       "date": "2023-10-08",
       "year": 2023,
       "region": "US",
-      "outlet": "Synthtopia （自转载）",
-      "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet": "Synthtopia",
+      "outlet_tier": 2,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "MEDO",
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 328600,
       "url": "https://www.synthtopia.com/content/2023/10/08/donner-intros-medo-portable-groovebox/"
     },
     {
@@ -6668,7 +6668,7 @@
       "campaign": "hush-x",
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 46100,
       "url": "https://www.guitarinteractivemagazine.com/review/donner-hush-i-travel-guitar-review/"
     },
     {
@@ -6684,7 +6684,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 46100,
       "url": "https://www.guitarinteractivemagazine.com/review/donner-arena-2000-multi-fx-review/"
     },
     {
@@ -6748,7 +6748,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 29000000,
       "url": "https://www.tomsguide.com/best-picks/best-wireless-earbuds-under-100-dollars"
     },
     {
@@ -6764,7 +6764,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 12000000,
       "url": "https://www.jpost.com/advisor/tools-and-home-improvement/10-top-selling-dreadnought-guitars-757679"
     },
     {
@@ -6780,7 +6780,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 543400,
       "url": "https://citizenside.com/technology/8-amazing-88-key-weighted-digital-pianos-for-2023/"
     },
     {
@@ -6796,7 +6796,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 640000,
       "url": "https://www.findthisbest.com/best-classical-guitars/mahogany"
     },
     {
@@ -6812,7 +6812,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": 107100,
+      "reach": 79900,
       "url": "https://www.musicconnection.com/product-profile-donner-arena-2000-guitar-multi-effects-processor/?utm_source=flipboard&utm_content=shanethefortean%2Fmagazine%2FGuitar%2C+Bass+%26+Music%2FAudio+Production"
     },
     {
@@ -6844,7 +6844,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体转发",
-      "reach": null,
+      "reach": 4500000,
       "url": "https://flipboard.com/article/product-profile-donner-arena-2000-guitar-multi-effects-processor/a-KZpJ_JjURY23sZ3GNySA5g%3Aa%3A835791581-49dd18a39f%2Fmusicconnection.com"
     },
     {
@@ -6860,7 +6860,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 356800,
       "url": "https://www.bollyinside.com/articles/donner-hush-i-travel-acoustic-electric-guitar-save-30-on-it-grab-it-for-only-299-99/"
     },
     {
@@ -6876,7 +6876,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 543400,
       "url": "https://citizenside.com/technology/15-unbelievable-electronic-keyboard-piano-for-2023/"
     },
     {
@@ -6892,7 +6892,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 188500,
       "url": "https://www.magneticmag.com/2023/08/donner-unveils-v1-1-0-firmware-update-for-essential-b1-bass-synthesizer/"
     },
     {
@@ -6908,7 +6908,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 152800,
       "url": "https://www.magneticmag.com/2023/08/affordable-music-production-gear-for-students/"
     },
     {
@@ -6924,7 +6924,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 29000000,
       "url": "https://www.tomsguide.com/opinion/5-wireless-earbuds-under-dollar50-that-beat-the-airpods-on-sound"
     },
     {
@@ -6940,7 +6940,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 368600,
       "url": "https://musicstrive.com/donner-guitars-overview/"
     },
     {
@@ -6956,7 +6956,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 2500000,
       "url": "https://www.audiosciencereview.com/forum/index.php?threads/donner-dyna-4-monitor-review.46474/"
     },
     {
@@ -6972,7 +6972,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 1400000,
       "url": "https://synthanatomy.com/2023/07/amazon-prime-synth-deals-incl-24-off-donner-b1-analog-synth.html"
     },
     {
@@ -6988,7 +6988,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 6875000,
+      "reach": 9000000,
       "url": "https://www.guitarworld.com/news/i-write-about-guitars-for-a-living-these-are-the-5-prime-day-deals-im-considering"
     },
     {
@@ -7100,7 +7100,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 1980000,
       "url": "https://americansongwriter.com/amazon-prime-day-2023/"
     },
     {
@@ -7116,7 +7116,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿宣发",
-      "reach": null,
+      "reach": 3391000000,
       "url": "https://finance.yahoo.com/news/donner-celebrates-summer-music-carnival-152900136.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5oay8&guce_referrer_sig=AQAAAJCFz79SQjkB04Ml6F7v8XUmfnZqukpw7Ilga3jrJHHpjzdlM-1hVzfh4iAbHyZ3NHVi5jZ2RDknAho5G22qIJi_PIjbhfUEYiBoSu6QnezRvfFI5QWcCuxc-TzUnkGxQXfgc-9LnT-GID9ZNrmAY15_61ETuYN8rpoXUrtn-RYe"
     },
     {
@@ -7132,7 +7132,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 19645,
+      "reach": 83600,
       "url": "https://performermag.com/best-instruments/donner-announces-amazon-prime-day-discounts/"
     },
     {
@@ -7148,7 +7148,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": 19645,
+      "reach": 199100,
       "url": "https://www.vintageguitar.com/47418/donner-rising-g-pro/"
     },
     {
@@ -7212,7 +7212,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": 19645,
+      "reach": 83600,
       "url": "https://performermag.com/best-instruments/best-music-keyboards-synth/review-donner-dmk-25-pro-midi-controller/"
     },
     {
@@ -7228,7 +7228,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 19645,
+      "reach": 83600,
       "url": "https://performermag.com/best-instruments/best-music-keyboards-synth/review-donner-b1-bass-synthesizer/"
     },
     {
@@ -7244,7 +7244,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": 19645,
+      "reach": 26000,
       "url": "https://performermag.com/best-instruments/best-music-keyboards-synth/review-donner-starry-pad-midi-drum-pad-controller/"
     },
     {
@@ -7292,7 +7292,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿",
-      "reach": null,
+      "reach": 5000,
       "url": "https://mediamikes.com/2023/05/donner-launches-new-pc-02-podcasting-workstation/"
     },
     {
@@ -7584,13 +7584,13 @@
       "url": "https://www.musicradar.com/reviews/donner-dmk-25-pro"
     },
     {
-      "id": "2023-04-26-gutiar-world",
+      "id": "2023-04-26-guitar-world",
       "date": "2023-04-26",
       "year": 2023,
       "region": "US",
-      "outlet": "Gutiar World",
-      "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet": "Guitar World",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "DST-600",
       "campaign": null,
@@ -7868,7 +7868,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/576558105/18/"
     },
     {
@@ -7884,7 +7884,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/576558105/46/"
     },
     {
@@ -7900,7 +7900,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/576332276/8/"
     },
     {
@@ -7916,7 +7916,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/576332276/14/"
     },
     {
@@ -7964,7 +7964,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/186340156/38/"
     },
     {
@@ -7980,7 +7980,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/186340156/46/"
     },
     {
@@ -7996,7 +7996,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://archive.maherpublications.com/view/186340156/24/"
     },
     {
@@ -8060,7 +8060,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿",
-      "reach": 5200,
+      "reach": 9096374,
       "url": "https://mikesgig.com/namm-2023-news-donner-will-exhibit-more-than-20-new-products-at-namm-2023"
     },
     {
@@ -8096,6 +8096,22 @@
       "url": "https://www.guitarworld.com/news/donner-seeker-series-dst-600-dst-700"
     },
     {
+      "id": "2023-04-06-musicradar",
+      "date": "2023-04-06",
+      "year": 2023,
+      "region": "UK",
+      "outlet": "MusicRadar",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
+      "outlet_logo": null,
+      "product": "DMK-25 PRO",
+      "campaign": null,
+      "content_type": null,
+      "format": "online",
+      "reach": 3858884,
+      "url": "https://www.musicradar.com/news/issue-395-of-future-music-is-out-now"
+    },
+    {
       "id": "2023-04-06-mmr",
       "date": "2023-04-06",
       "year": 2023,
@@ -8110,22 +8126,6 @@
       "format": "通稿",
       "reach": 40869,
       "url": "https://mmrmagazine.com/site/news/supplier-scene/visit-donner-at-namm-2023/"
-    },
-    {
-      "id": "2023-04-06-future-music",
-      "date": "2023-04-06",
-      "year": 2023,
-      "region": "US",
-      "outlet": "Future Music",
-      "outlet_tier": 3,
-      "outlet_category": null,
-      "outlet_logo": null,
-      "product": "DMK-25 PRO",
-      "campaign": null,
-      "content_type": null,
-      "format": "online",
-      "reach": 3858884,
-      "url": "https://www.musicradar.com/news/issue-395-of-future-music-is-out-now"
     },
     {
       "id": "2023-04-02-midifan",
@@ -8348,7 +8348,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 112100,
       "url": "https://www.zgswcn.com/article/202310/202310121801141117.html"
     },
     {
@@ -8364,7 +8364,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 366600,
       "url": "https://web-price.info/review/donner-dobuds-one.php"
     },
     {
@@ -8380,7 +8380,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 111300,
       "url": "https://www.tikgadget.com/donner-dobuds-one-amazon-black-friday-sale-2023/"
     },
     {
@@ -8396,7 +8396,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 11500000,
       "url": "https://stylecaster.com/entertainment/music/1673772/guitar-black-friday-deals/"
     },
     {
@@ -8412,7 +8412,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 262400,
       "url": "https://shigedosicks.net/dn-dobuds-one/"
     },
     {
@@ -8428,7 +8428,7 @@
       "campaign": "hush-x",
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 287800,
       "url": "https://rockguitaruniverse.com/review/donner-hush/"
     },
     {
@@ -8444,7 +8444,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 1200000,
       "url": "https://robots.net/tech-reviews/15-best-digital-keyboard-for-2023/"
     },
     {
@@ -8460,7 +8460,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体转发",
-      "reach": null,
+      "reach": 607100,
       "url": "https://video-streaming.orange.fr/musique/donner-arena-2000-demo-CNT0000026tvVq.html"
     },
     {
@@ -8476,7 +8476,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 604600,
       "url": "https://mozo.com.au/online-shopping/2023-boxing-day-sales-a-guide-to-what-when-and-where"
     },
     {
@@ -8492,7 +8492,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 212400,
       "url": "https://keyboardkraze.com/donner-ddp-80-review/"
     },
     {
@@ -8508,7 +8508,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 35600,
       "url": "https://insideaudio.net/nl/blog/donner-arena-2000-multi-effect-gitaar-pedaal-review-een-wereld-van-klank-in-n-pedalboard.html"
     },
     {
@@ -8540,7 +8540,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 15000,
       "url": "https://www.calameo.com/read/0043053106720e5e6885a?utm_source=sendinblue&utm_campaign=dD_May2023&utm_medium=email"
     },
     {
@@ -8556,7 +8556,7 @@
       "campaign": null,
       "content_type": null,
       "format": "online",
-      "reach": null,
+      "reach": 15000,
       "url": "https://www.calameo.com/read/004305310be0ca594fafe"
     },
     {
@@ -8572,7 +8572,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 85200,
       "url": "https://digimaroblog.com/donner-dobuds-one-sale/"
     },
     {
@@ -8588,7 +8588,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 243200,
       "url": "https://www.delamar.de/news/black-friday-deals-36007/"
     },
     {
@@ -8620,7 +8620,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://artistpro.mydigitalpublication.com/publication/?m=66709&i=783811&p=16&ver=html5"
     },
     {
@@ -8636,7 +8636,7 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体购买",
-      "reach": null,
+      "reach": 9000,
       "url": "https://artistpro.mydigitalpublication.com/publication/?m=66709&i=787942&p=22&ver=html5"
     },
     {
@@ -8652,24 +8652,8 @@
       "campaign": null,
       "content_type": null,
       "format": "媒体转载",
-      "reach": null,
+      "reach": 4500000,
       "url": "https://flipboard.com/@willvance2023/magnetic-magazine-qee0rcjpz/donner-unveils-v1-1-0-firmware-update-for-essential-b1-bass-synthesizer/a-Sql4MBO2SMqz5D9vj8lxkg%3Aa%3A4005374436-443791c568%2Fmagneticmag.com"
-    },
-    {
-      "id": "2023-01-01-unknown-2",
-      "date": "2023-01-01",
-      "year": 2023,
-      "region": "US",
-      "outlet": "Unknown",
-      "outlet_tier": 3,
-      "outlet_category": null,
-      "outlet_logo": null,
-      "product": null,
-      "campaign": null,
-      "content_type": null,
-      "format": null,
-      "reach": null,
-      "url": "https://www.musicradar.com/news/i-used-to-sell-keyboards-and-pianos-for-a-living-and-ive-hand-selected-5-amazon-prime-day-deals-every-budding-pianist-should-check-out"
     },
     {
       "id": "2023-01-01-tomsguide",
@@ -8684,7 +8668,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 29000000,
       "url": "https://www.tomsguide.com/round-up/best-fake-airpods"
     },
     {
@@ -8700,7 +8684,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 1400000,
       "url": "https://synthanatomy.com/2023/10/donner-medo-new-portable-battery-powered-sampling-groovebox-now-on-kickstarter.html"
     },
     {
@@ -8716,7 +8700,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 1400000,
       "url": "https://synthanatomy.com/2023/07/amazon-prime-synth-deals-incl-24-off-donner-b1-analog-synth.html"
     },
     {
@@ -8732,23 +8716,23 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 1100000,
       "url": "https://www.soundonsound.com/news/donners-essential-b1-synth-firmware-updated"
     },
     {
-      "id": "2023-01-01-sos",
+      "id": "2023-01-01-sound-on-sound-2",
       "date": "2023-01-01",
       "year": 2023,
-      "region": "US",
-      "outlet": "SOS",
-      "outlet_tier": 3,
-      "outlet_category": null,
+      "region": "UK",
+      "outlet": "Sound on Sound",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "PC-02",
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 1100000,
       "url": "https://www.soundonsound.com/reviews/all-one-podcasting-devices"
     },
     {
@@ -8780,7 +8764,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 81600,
       "url": "https://www.pianistmagazine.com/blogs/donner-ddp-80-plus-piano-review-what-does-it-offer/"
     },
     {
@@ -8812,7 +8796,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 569400000,
       "url": "https://www.nytimes.com/wirecutter/reviews/best-ukulele-for-beginners/"
     },
     {
@@ -8828,7 +8812,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 642200000,
       "url": "https://www.nytimes.com/wirecutter/reviews/best-ukulele-for-beginners/"
     },
     {
@@ -8844,7 +8828,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 5000,
       "url": "https://nerdmusician.com/donner-luncurkan-potable-synthesizer-medo/"
     },
     {
@@ -8860,7 +8844,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 5400000,
+      "reach": 3500000,
       "url": "https://www.musicradar.com/news/donner-medo-synth-sampler"
     },
     {
@@ -8876,8 +8860,24 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": 5400000,
+      "reach": 3500000,
       "url": "https://www.musicradar.com/search?searchTerm=Donner"
+    },
+    {
+      "id": "2023-01-01-musicradar-3",
+      "date": "2023-01-01",
+      "year": 2023,
+      "region": "UK",
+      "outlet": "MusicRadar",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
+      "outlet_logo": null,
+      "product": null,
+      "campaign": null,
+      "content_type": null,
+      "format": null,
+      "reach": 5400000,
+      "url": "https://www.musicradar.com/news/i-used-to-sell-keyboards-and-pianos-for-a-living-and-ive-hand-selected-5-amazon-prime-day-deals-every-budding-pianist-should-check-out"
     },
     {
       "id": "2023-01-01-music-tech",
@@ -8892,7 +8892,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 2200000,
       "url": "https://musictech.com/news/gear/donner-medo/"
     },
     {
@@ -8988,7 +8988,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 167861,
+      "reach": 135200,
       "url": "https://www.midifan.com/modulenews-detailview-47793.htm"
     },
     {
@@ -9004,7 +9004,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 167861,
+      "reach": 62200,
       "url": "https://m.midifan.com/hardware_body.php?id=11346"
     },
     {
@@ -9020,7 +9020,7 @@
       "campaign": null,
       "content_type": null,
       "format": "测评",
-      "reach": null,
+      "reach": 46200,
       "url": "https://mediamikes.com/2023/07/product-review-donner-mamp5-stereo-amplifier-receiver/"
     },
     {
@@ -9036,7 +9036,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 46200,
       "url": "https://mediamikes.com/2023/07/donner-celebrates-the-summer-music-carnival-unveiling-incredible-amazon-prime-day-discounts-on-digital-pianos-electric-guitars-and-pedals/"
     },
     {
@@ -9052,7 +9052,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 142100,
       "url": "https://www.matrixsynth.com/2023/08/donners-essential-b1-bass-synthesizer.html"
     },
     {
@@ -9068,7 +9068,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 142100,
       "url": "https://www.matrixsynth.com/2023/10/introducing-donner-medo-i-harness-magic.html"
     },
     {
@@ -9084,7 +9084,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 188500,
       "url": "https://www.magneticmag.com/2023/10/unveiling-medo/"
     },
     {
@@ -9100,7 +9100,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": 8400,
+      "reach": 32900,
       "url": "https://mmrmagazine.com/site/gear/pro-audio/donner-essential-b1-bass-synthesizer-major-firmware-update/"
     },
     {
@@ -9116,7 +9116,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 385300,
       "url": "https://killerguitarrigs.com/donner-amazon-discounts-guitars-pedals-digital-pianos-details/"
     },
     {
@@ -9148,7 +9148,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": null,
+      "reach": 5700,
       "url": "https://gutscheinfuralles.de/marken/Donner-Black-Friday"
     },
     {
@@ -9180,7 +9180,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": 1758000,
+      "reach": 2000000,
       "url": "https://guitar.com/guides/best-black-friday-2023-guitar-deals-amazon-uk/"
     },
     {
@@ -9212,7 +9212,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": 6875000,
+      "reach": 9000000,
       "url": "https://www.guitarworld.com/news/best-black-friday-guitar-deals"
     },
     {
@@ -9228,7 +9228,7 @@
       "campaign": null,
       "content_type": null,
       "format": null,
-      "reach": 6875000,
+      "reach": 9000000,
       "url": "https://www.guitarworld.com/news/beginner-starter-packs-electric-guitars-black-friday-2023"
     },
     {
@@ -9292,7 +9292,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 3600000,
       "url": "https://gearspace.com/board/new-product-alert/1411673-donner-announces-essential-b1-bass-synthesizer-v1-1-0-firmware-update.html"
     },
     {
@@ -9340,7 +9340,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 531600,
       "url": "https://cdm.link/2023/08/donners-b1-bass-synth-update/"
     },
     {
@@ -9372,7 +9372,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 1100000,
       "url": "https://fr.audiofanzine.com/synthe-rack-divers/donner/medo/forums/t.807298,commentaires-sur-la-news-donner-devoile-les-premiers-elements-de-son-prochain-medo.html"
     },
     {
@@ -9388,7 +9388,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 68900,
       "url": "https://www.audioapp.cn/audio/12604.html"
     },
     {
@@ -9404,7 +9404,7 @@
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 23800000,
       "url": "https://www.rollingstone.com/product-recommendations/electronics/best-piano-keyboards-for-beginners-1149828/"
     },
     {
@@ -9420,7 +9420,7 @@
       "campaign": null,
       "content_type": null,
       "format": "通稿联系报道",
-      "reach": null,
+      "reach": 642200000,
       "url": "https://www.nytimes.com/wirecutter/money/best-prime-day-deals-under-100/"
     }
   ]

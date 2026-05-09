@@ -31,9 +31,12 @@ OUT_JSON = REPO_ROOT / "src" / "data" / "coverage.json"
 LOG_FILE = REPO_ROOT / ".coverage-import.log"
 
 # Per-sheet column map (1-based, matches openpyxl).
+# `reach_alt` covers an alternate column where reach was sometimes typed by mistake.
+# In the 2023 sheet, ~74 rows have the MUV value in col 11 (RANK) instead of col 10
+# (Monthly Visitors); falling back recovers them without re-touching the xlsx.
 SHEETS = {
     "2023": {"date": 1, "outlet_category": 2, "product": 3, "outlet": 4, "url": 5,
-             "format": 7, "reach": 10},
+             "format": 7, "reach": 10, "reach_alt": 11},
     "2024 Coverage": {"date": 1, "region": 2, "product": 4, "outlet": 5,
                       "outlet_category": 6, "url": 7, "format": 8, "content_type": 9,
                       "reach": 10},
@@ -119,11 +122,15 @@ class OutletResolver:
         self.domain_region = cfg.get("domain_region_fallback", {})
         # alias → canonical outlet
         self.alias_index: dict[str, dict] = {}
+        # domain → canonical outlet (used as fallback when xlsx outlet cell is blank)
+        self.domain_index: dict[str, dict] = {}
         for o in self.outlets:
             keys = {o["name"]}
             keys.update(o.get("aliases", []))
             for k in keys:
                 self.alias_index[k.lower().strip()] = o
+            if o.get("domain"):
+                self.domain_index[o["domain"].lower()] = o
         # campaign matchers
         self.campaign_matchers = []
         for c in self.campaigns:
@@ -134,6 +141,19 @@ class OutletResolver:
         if not raw_outlet:
             return None
         return self.alias_index.get(raw_outlet.lower().strip())
+
+    def resolve_by_url(self, url: str) -> dict | None:
+        try:
+            host = urlparse(url).netloc.lower().lstrip("www.")
+        except Exception:
+            return None
+        # exact match, then suffix match (e.g. fr.audiofanzine.com → audiofanzine.com)
+        if host in self.domain_index:
+            return self.domain_index[host]
+        for dom, meta in self.domain_index.items():
+            if host.endswith("." + dom) or host == dom:
+                return meta
+        return None
 
     def match_campaign(self, product: str) -> str | None:
         if not product:
@@ -187,6 +207,14 @@ def main():
             raw_outlet = str(raw_outlet).strip() if raw_outlet else ""
             outlet_meta = resolver.resolve(raw_outlet)
 
+            # If outlet cell is blank (or unrecognized), try inferring from URL domain.
+            if not outlet_meta:
+                inferred = resolver.resolve_by_url(url)
+                if inferred:
+                    outlet_meta = inferred
+                    if not raw_outlet:
+                        raw_outlet = inferred["name"]
+
             if not outlet_meta and raw_outlet:
                 unknown_outlets[raw_outlet] += 1
 
@@ -197,6 +225,8 @@ def main():
 
             date_iso = parse_date(ws.cell(row=r, column=cmap["date"]).value, sheet_year)
             reach = parse_reach(ws.cell(row=r, column=cmap["reach"]).value)
+            if reach is None and "reach_alt" in cmap:
+                reach = parse_reach(ws.cell(row=r, column=cmap["reach_alt"]).value)
             if reach is None:
                 reach = default_muv
 
