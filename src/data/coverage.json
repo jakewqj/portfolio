@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-09T06:28:08Z",
+  "generated_at": "2026-05-09T06:36:18Z",
   "source_xlsx": "PR coverages 20260507 - 副本.xlsx",
   "totals": {
     "clippings": 587,
-    "outlets": 202,
+    "outlets": 201,
     "regions": [
       "AU",
       "BR",
@@ -16,7 +16,7 @@
       "UK",
       "US"
     ],
-    "cumulative_reach": 20177644075,
+    "cumulative_reach": 20182700875,
     "by_year": {
       "2023": 176,
       "2024": 193,
@@ -7317,14 +7317,14 @@
       "year": 2023,
       "region": "US",
       "outlet": "Mixonline",
-      "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_tier": 2,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "PC-02",
       "campaign": null,
       "content_type": null,
       "format": "通稿",
-      "reach": null,
+      "reach": 35000,
       "url": "https://www.mixonline.com/technology/news-products/donner-pc-02-content-creation-workstation-debuts"
     },
     {
@@ -7381,14 +7381,14 @@
       "year": 2023,
       "region": "US",
       "outlet": "Popular Science",
-      "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_tier": 1,
+      "outlet_category": "mass-media",
       "outlet_logo": null,
       "product": null,
       "campaign": null,
       "content_type": null,
       "format": "榜单",
-      "reach": null,
+      "reach": 5000000,
       "url": "https://www.popsci.com/gear/best-electric-guitars-for-beginners/"
     },
     {
@@ -7526,13 +7526,13 @@
       "region": "US",
       "outlet": "Nerd Musician",
       "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "REVO",
       "campaign": null,
       "content_type": null,
       "format": "online",
-      "reach": null,
+      "reach": 5000,
       "url": "https://nerdmusician.com/namm-2023-donner-luncurkan-revo-smart-guitar-produk-inovatif-untuk-pendidikan-musik/"
     },
     {
@@ -7542,7 +7542,7 @@
       "region": "US",
       "outlet": "Nerd Musician",
       "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "HUSH-X",
       "campaign": "hush-x",
@@ -8742,13 +8742,13 @@
       "region": "US",
       "outlet": "Piano and Synth",
       "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "B1",
       "campaign": null,
       "content_type": null,
       "format": "通稿",
-      "reach": null,
+      "reach": 16800,
       "url": "https://pianoandsynth.com/donner-b1-analog-bass-synth-and-sequencer-released/"
     },
     {
@@ -8816,13 +8816,13 @@
       "url": "https://www.nytimes.com/wirecutter/reviews/best-ukulele-for-beginners/"
     },
     {
-      "id": "2023-01-01-nerdmusician",
+      "id": "2023-01-01-nerd-musician",
       "date": "2023-01-01",
       "year": 2023,
       "region": "US",
-      "outlet": "Nerdmusician",
+      "outlet": "Nerd Musician",
       "outlet_tier": 3,
-      "outlet_category": null,
+      "outlet_category": "instrument-vertical",
       "outlet_logo": null,
       "product": "MEDO",
       "campaign": null,

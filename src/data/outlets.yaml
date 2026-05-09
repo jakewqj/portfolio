@@ -249,6 +249,39 @@ outlets:
     region: US
     category: mass-media
 
+  # ── added for 2023 backfill — conservative public-estimate MUVs ─────
+  - name: Popular Science
+    aliases: ["popsci", "Popsci"]
+    domain: popsci.com
+    tier: 1
+    region: US
+    category: mass-media
+    default_muv: 5000000
+
+  - name: Mixonline
+    aliases: ["Mix Magazine", "Mix Online"]
+    domain: mixonline.com
+    tier: 2
+    region: US
+    category: instrument-vertical
+    default_muv: 35000
+
+  - name: Nerd Musician
+    aliases: ["nerdmusician", "Nerdmusician"]
+    domain: nerdmusician.com
+    tier: 3
+    region: US
+    category: instrument-vertical
+    default_muv: 5000
+
+  - name: Piano and Synth
+    aliases: ["pianoandsynth"]
+    domain: pianoandsynth.com
+    tier: 3
+    region: US
+    category: instrument-vertical
+    default_muv: 16800
+
   - name: ynetnews
     aliases: ["YNet News"]
     domain: ynetnews.com
