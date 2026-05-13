@@ -1,0 +1,214 @@
+# Campaign-display aliases for coverage import.
+#
+# Maps raw xlsx product-column strings to canonical campaign labels.
+# Consumed by scripts/import-coverage.py.
+#
+# Each rule sets:
+#   label  — canonical "<Category> - <Model>" string shown in the Campaign column (required)
+#   event  — optional event tag (filterable separately from the label)
+#
+# Lookup order:
+#   1. `exact:` map — raw value matched as-is (after .strip()), case-sensitive.
+#   2. `patterns:` list — ordered regex fallbacks, first match wins.
+#
+# Unmapped raw values are logged to .coverage-import.log so this file can be iterated.
+
+exact:
+  # ---------- Synth ----------
+  "L1":                            { label: "Synth - L1" }
+  "B1":                            { label: "Synth - B1" }
+  "D1":                            { label: "Synth - D1" }
+  "合成器":                         { label: "Synth" }
+  "合成器 - B1":                    { label: "Synth - B1" }
+  "合成器 - D1":                    { label: "Synth - D1" }
+  "MEDO":                          { label: "Synth - MEDO" }
+  "MIDI - MEDO":                   { label: "Synth - MEDO" }
+  "SE-1":                          { label: "Piano - SE-1" }
+  "怪奇物语-L1":                    { label: "Synth - L1" }
+
+  # ---------- Guitar ----------
+  "吉他":                          { label: "Guitar" }
+  "DST-600":                       { label: "Guitar - DST-600" }
+  "吉他 - DST-152":                 { label: "Guitar - DST-152" }
+  "吉他 - DST600/700":              { label: "Guitar - DST-600/700" }
+  "吉他 - DLP-124B":                { label: "Guitar - DLP-124B" }
+  "DAG-1":                         { label: "Guitar - DAG-1" }
+  "DCG-1":                         { label: "Guitar - DCG-1" }
+  "Rising G Pro":                  { label: "Guitar - Rising G Pro" }
+  "Donner Beginner  Electric Guitar": { label: "Guitar - Beginner Electric" }
+
+  # ---------- HUSH Guitar ----------
+  "HUSH":                          { label: "HUSH Guitar" }
+  "HUSH-X":                        { label: "HUSH Guitar - HUSH-X" }
+  "HUHS-X":                        { label: "HUSH Guitar - HUSH-X" }
+  "HUSH-I":                        { label: "HUSH Guitar - HUSH-I" }
+  "HUSH I EVO 2":                  { label: "HUSH Guitar - HUSH-I EVO 2" }
+  "吉他 - HUSH-X":                  { label: "HUSH Guitar - HUSH-X" }
+  "吉他 -HUSH-X":                   { label: "HUSH Guitar - HUSH-X" }
+  "吉他 - HUSH-X PRO":              { label: "HUSH Guitar - HUSH-X PRO" }
+  "吉他 - HUSH-I":                  { label: "HUSH Guitar - HUSH-I" }
+  "吉他 - HUSH-I Pro":              { label: "HUSH Guitar - HUSH-I PRO" }
+  "吉他 - HUSH-I PRO":              { label: "HUSH Guitar - HUSH-I PRO" }
+
+  # ---------- Piano ----------
+  "电钢":                          { label: "Piano" }
+  "DDP-80":                        { label: "Piano - DDP-80" }
+  "DDP-80 PLUS":                   { label: "Piano - DDP-80 PLUS" }
+  "电钢 - DDP":                     { label: "Piano - DDP" }
+  "电钢 - DDP-60":                  { label: "Piano - DDP-60" }
+  "电钢 - DDP-80":                  { label: "Piano - DDP-80" }
+  "电钢 - DDP-300":                 { label: "Piano - DDP-300" }
+  "电钢 - dep-10":                  { label: "Piano - DEP-10" }
+  "DEP-10":                        { label: "Piano - DEP-10" }
+  "DEP-20":                        { label: "Piano - DEP-20" }
+  "DJP-1000":                      { label: "Piano - DJP-1000" }
+  "DEK-610":                       { label: "Piano - DEK-610" }
+
+  # ---------- MIDI Controller ----------
+  "DMK-25 PRO":                    { label: "MIDI Controller - DMK-25 PRO" }
+  "DMK-25 Pro":                    { label: "MIDI Controller - DMK-25 PRO" }
+  "DBM-100":                       { label: "Accessory - DBM-100" }
+
+  # ---------- Drum ----------
+  "电鼓":                          { label: "Drum" }
+  "电鼓 - BackBeat":                { label: "Drum - BackBeat" }
+  "电鼓 - DED70":                   { label: "Drum - DED-70" }
+  "电鼓-Groove":                    { label: "Drum - Groove" }
+  "DED-200":                       { label: "Drum - DED-200" }
+  "DED-80":                        { label: "Drum - DED-80" }
+  "Starry Pad":                    { label: "Drum - Starry Pad" }
+  "DT-1":                          { label: "Effects - DT-1" }
+
+  # ---------- Effects ----------
+  "效果器":                         { label: "Effects" }
+  "Triple Threat":                 { label: "Effects - Triple Threat" }
+  "Arena 2000":                    { label: "Effects - Arena 2000" }
+  "Arena2000":                     { label: "Effects - Arena 2000" }
+  "效果器 - Arena2000":             { label: "Effects - Arena 2000" }
+  "效果器 - CIRCLE LOOPER":         { label: "Effects - Circle Looper" }
+  "效果器 - White Tape":            { label: "Effects - White Tape" }
+  "PD":                            { label: "Effects - PD" }
+  "PD - HUSH X PRO":               { label: "Effects - PD" }
+  "REVO":                          { label: "Effects - REVO" }
+  "Ruben Wan Signature":           { label: "Effects - Ruben Wan Signature" }
+  "Double Swords":                 { label: "Effects - Double Swords" }
+  "MIYAVI - DOUBLE SWORDS":        { label: "Effects - Double Swords" }
+  "DTC-100":                       { label: "Guitar - DTC-100" }
+  "PC-02":                         { label: "Audio Interface - PC-02" }
+  "品牌合作 - 效果器 - Triple Threat": { label: "Effects - Triple Threat" }
+
+  # ---------- Ukulele ----------
+  "Ukulele":                       { label: "Ukulele" }
+  "吉他 - Ukulele":                 { label: "Ukulele" }
+
+  # ---------- Amp ----------
+  "Donner Mini Guitar Amp":        { label: "Amp - Mini Guitar Amp" }
+  "mamp5":                         { label: "Amp - MAMP5" }
+
+  # ---------- Speaker / Earbuds ----------
+  "DYNA 4 speaker":                { label: "Speaker - DYNA 4" }
+  "Dobuds":                        { label: "Earbuds - Dobuds" }
+
+  # ---------- Accessory ----------
+  "配件":                          { label: "Accessory" }
+  "效果器连接线":                   { label: "Accessory - Pedal Cable" }
+  "Livejack":                      { label: "Accessory - Livejack" }
+
+  # ---------- Pure Event ----------
+  "NAMM":                          { label: "Event - NAMM",                event: "NAMM" }
+  "NAMM2023":                      { label: "Event - NAMM 2023",           event: "NAMM 2023" }
+  "Namm2023":                      { label: "Event - NAMM 2023",           event: "NAMM 2023" }
+  "Namm2024":                      { label: "Event - NAMM 2024",           event: "NAMM 2024" }
+  "Namm2025":                      { label: "Event - NAMM 2025",           event: "NAMM 2025" }
+  "NAMM 2026":                     { label: "Event - NAMM 2026",           event: "NAMM 2026" }
+  "展会 - NAMM":                    { label: "Event - NAMM",                event: "NAMM" }
+  "展会 - NAMM 2025":               { label: "Event - NAMM 2025",           event: "NAMM 2025" }
+  "展会 - NAMM 2026":               { label: "Event - NAMM 2026",           event: "NAMM 2026" }
+  "展会 - 上海乐展":                 { label: "Event - MusicChina",          event: "MusicChina" }
+  "展会 - 跨境展":                  { label: "Event - Cross-border Trade Show" }
+  "PR 活动 - 北京交流方式展":         { label: "Event - Beijing Exchange Expo" }
+  "PR活动 - 北京模块合成器展":        { label: "Event - Beijing Modular Synth Expo" }
+  "PR活动 - 荔枝木":                 { label: "Event - Lychee Wood (PR)" }
+  "啸音乐节":                       { label: "Event - Xiao Music Festival" }
+  "四夜Only展":                     { label: "Event - Four Nights Only" }
+  "荣声高校联演":                    { label: "Event - Rongsheng Campus Tour" }
+  "Donner Live - Synth模样":        { label: "Event - Donner Live (Synth Stream)" }
+  "Donner Live - 顾忠山":           { label: "Event - Donner Live (Gu Zhongshan)" }
+
+  # ---------- Event + Product (dual-tagged: label is the product, event filterable) ----------
+  "NAMM 2026 - Ruben Wan":         { label: "Effects - Ruben Wan Signature", event: "NAMM 2026" }
+  "NAMM 2026 MIYAVI - DOUBLE SWORDS": { label: "Effects - Double Swords",   event: "NAMM 2026" }
+  "展会 - NAMM - 吉他 - DST600/700": { label: "Guitar - DST-600/700",        event: "NAMM" }
+  "展会 - NAMM - 品牌合作 - 效果器 - Triple Threat": { label: "Effects - Triple Threat", event: "NAMM" }
+  "展会 - NAMM - 电鼓 - BackBeat":   { label: "Drum - BackBeat",             event: "NAMM" }
+  "展会 - NAMM 2025 - EMBARK":      { label: "Guitar - EMBARK",             event: "NAMM 2025" }
+  "展会 - NAMM 2025 - HUSH-X PRO":  { label: "HUSH Guitar - HUSH-X PRO",    event: "NAMM 2025" }
+  "展会 - NAMM 2025 - L1":          { label: "Synth - L1",                  event: "NAMM 2025" }
+  "展会 - NAMM 2025 - OURA":        { label: "OURA Piano - OURA",           event: "NAMM 2025" }
+  "展会 - NAMM 2025 - OURA, Beat":  { label: "OURA Piano - OURA",           event: "NAMM 2025" }
+  "展会 - NAMM 2025 - X PRO，OURA, BEAT": { label: "HUSH Guitar - HUSH-X PRO", event: "NAMM 2025" }
+  "展会 - NAMM 2025 - YELLOW FALL II": { label: "Effects - Yellow Fall II", event: "NAMM 2025" }
+  "展会 - NAMM 2025 - 合成器 D1":    { label: "Synth - D1",                  event: "NAMM 2025" }
+  "展会 - NAMM 2026 - Groove 电鼓":  { label: "Drum - Groove",               event: "NAMM 2026" }
+  "展会 - NAMM 2026 - HLX-500 - 吉他": { label: "Guitar - HLX-500",          event: "NAMM 2026" }
+  "展会 - NAMM 2026 - miyavi 效果器": { label: "Effects - Double Swords",    event: "NAMM 2026" }
+  "展会 - NAMM 2026 - 电钢":         { label: "Piano",                       event: "NAMM 2026" }
+  "展会 - 上海乐展 - L1 - B1":        { label: "Synth - L1",                  event: "MusicChina" }
+  "展会 - 上海展 - L1":              { label: "Synth - L1",                  event: "MusicChina" }
+  "展会 - 上海展 - MIYAVI":          { label: "Effects - Double Swords",     event: "MusicChina" }
+
+  # ---------- Marketing ----------
+  "Branding":                      { label: "Marketing - Branding" }
+  "春促":                          { label: "Marketing - Spring Promotion" }
+  "营销 - 黑五":                    { label: "Marketing - Black Friday" }
+  "营销 - 黑五-电鼓":                { label: "Marketing - Black Friday" }
+  "营销 - 黑五/HUSH-I PRO":         { label: "Marketing - Black Friday" }
+  "营销 -DEALS":                   { label: "Marketing - Deals" }
+  "营销 - PD":                     { label: "Marketing - PD" }
+  "PD - edrum - HUSH":             { label: "Marketing - PD" }
+  "PD - 电钢":                     { label: "Marketing - PD" }
+  "黑五营销 - BackBeat":            { label: "Marketing - Black Friday" }
+  "黑五营销 - EMBART, 木吉他":       { label: "Marketing - Black Friday" }
+  "黑五营销 - ESSENTIAL":           { label: "Marketing - Black Friday" }
+  "黑五营销 - Guitar":              { label: "Marketing - Black Friday" }
+  "黑五营销 - HUSH":                { label: "Marketing - Black Friday" }
+  "黑五营销 - Looper":              { label: "Marketing - Black Friday" }
+  "黑五营销 - Pedal":               { label: "Marketing - Black Friday" }
+  "黑五营销 - Synth":               { label: "Marketing - Black Friday" }
+  "黑五营销 - 吉他":                 { label: "Marketing - Black Friday" }
+  "黑五营销 - 电吹管":               { label: "Marketing - Black Friday" }
+  "黑五营销 - 配件":                 { label: "Marketing - Black Friday" }
+  "黑五营销- 电钢 - OURA":           { label: "Marketing - Black Friday" }
+  "产品营销 -  APL":                { label: "Marketing - APL" }
+  "产品营销 - B1、D1":               { label: "Marketing - Synth Push" }
+  "产品营销 - Dobuds":              { label: "Marketing - Dobuds" }
+  "产品营销 - HUSH":                { label: "Marketing - HUSH" }
+  "产品营销 - HUSH series":         { label: "Marketing - HUSH" }
+  "产品营销 - HUSH-C":              { label: "Marketing - HUSH-C" }
+  "产品营销 - HUSH-I Pro":          { label: "Marketing - HUSH-I PRO" }
+  "产品营销 - HUSH-X PRO":          { label: "Marketing - HUSH-X PRO" }
+  "产品营销 - L1":                  { label: "Marketing - L1" }
+  "产品营销 - L1 - Triple Threat":  { label: "Marketing - L1" }
+  "产品营销 - Patch Cable":         { label: "Marketing - Patch Cable" }
+  "产品营销 - Pedal":               { label: "Marketing - Pedal" }
+  "产品营销 - Triple Threat":       { label: "Marketing - Triple Threat" }
+  "产品营销 - UKULELE":             { label: "Marketing - Ukulele" }
+  "产品营销 - 效果器":               { label: "Marketing - Effects" }
+  "产品营销 - 电钢 - DDP400":        { label: "Marketing - DDP-400" }
+  "产品营销 - 电钢 - DDP80":         { label: "Marketing - DDP-80" }
+  "产品营销 - 电钢 - DEP20":         { label: "Marketing - DEP-20" }
+  "产品营销 - 电钢 - OURA":          { label: "Marketing - OURA Piano" }
+  "产品营销 - 电鼓":                 { label: "Marketing - Drum" }
+  "产品营销 -Fuzz pedal":           { label: "Marketing - Fuzz Pedal" }
+  "产品营销-CV-3":                  { label: "Marketing - CV-3" }
+  "产品营销-MAMP2":                 { label: "Marketing - MAMP2" }
+  "品牌合作 - MI 合作":              { label: "Marketing - Brand Collab (MI)" }
+  "品牌合作 - NEW DEALER":          { label: "Marketing - Dealer" }
+  "品牌合作 - SOR":                 { label: "Marketing - Brand Collab (SOR)" }
+  "Cubase":                        { label: "Marketing - Brand Collab (Cubase)" }
+  "Ian英文博主采访":                 { label: "Marketing - Influencer" }
+  "合成器活动":                      { label: "Marketing - Synth Push" }
+
+# Regex fallbacks. Evaluated in order; first match wins. Only used when no exact
+# match above. Keep empty unless a new prefix family appears in future imports.
+patterns: []

@@ -27,6 +27,7 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_XLSX = Path(r"D:/Work/Raw/PR coverages 20260507 - 副本.xlsx")
 OUTLETS_YAML = REPO_ROOT / "src" / "data" / "outlets.yaml"
+CAMPAIGN_ALIASES_YAML = REPO_ROOT / "src" / "data" / "campaign-aliases.yaml"
 OUT_JSON = REPO_ROOT / "src" / "data" / "coverage.json"
 LOG_FILE = REPO_ROOT / ".coverage-import.log"
 
@@ -198,6 +199,31 @@ class OutletResolver:
         return None
 
 
+class AliasResolver:
+    """Resolves raw xlsx product strings → (campaign_display, event)."""
+
+    def __init__(self, yaml_path: Path):
+        with yaml_path.open(encoding="utf-8") as f:
+            cfg = yaml.safe_load(f) or {}
+        self.exact: dict[str, dict] = cfg.get("exact") or {}
+        self.patterns: list[tuple[re.Pattern, dict]] = []
+        for rule in cfg.get("patterns") or []:
+            self.patterns.append((re.compile(rule["match"]), rule))
+
+    def resolve(self, raw: str) -> tuple[str | None, str | None]:
+        if not raw:
+            return (None, None)
+        rule = self.exact.get(raw)
+        if rule is None:
+            for pat, candidate in self.patterns:
+                if pat.search(raw):
+                    rule = candidate
+                    break
+        if rule is None:
+            return (None, None)
+        return (rule.get("label"), rule.get("event"))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--xlsx", type=Path, default=DEFAULT_XLSX)
@@ -208,11 +234,13 @@ def main():
         sys.exit(f"xlsx not found: {args.xlsx}")
 
     resolver = OutletResolver(OUTLETS_YAML)
+    aliases = AliasResolver(CAMPAIGN_ALIASES_YAML)
     wb = openpyxl.load_workbook(args.xlsx, data_only=True)
 
     clippings: list[dict] = []
     seen_ids: dict[str, int] = {}
     unknown_outlets: Counter[str] = Counter()
+    unmapped_campaigns: Counter[str] = Counter()
     skipped = 0
 
     for sheet_name, cmap in SHEETS.items():
@@ -256,6 +284,9 @@ def main():
             product_raw = ws.cell(row=r, column=cmap["product"]).value
             product_str = str(product_raw).strip() if product_raw else ""
             campaign_slug = resolver.match_campaign(product_str)
+            campaign_display, event = aliases.resolve(product_str)
+            if product_str and campaign_display is None:
+                unmapped_campaigns[product_str] += 1
 
             region = None
             if "region" in cmap:
@@ -301,7 +332,8 @@ def main():
                 "outlet_tier": outlet_tier,
                 "outlet_category": outlet_category,
                 "outlet_logo": outlet_logo,
-                "product": product_str or None,
+                "campaign_display": campaign_display,
+                "event": event,
                 "campaign": campaign_slug,
                 "content_type": content_type,
                 "format": fmt,
@@ -346,11 +378,16 @@ def main():
         "",
         f"## unrecognized outlets ({len(unknown_outlets)}):",
         *(f"  {name!r}: {count}" for name, count in unknown_outlets.most_common()),
+        "",
+        f"## unmapped campaign values ({len(unmapped_campaigns)}):",
+        *(f"  {name!r}: {count}" for name, count in unmapped_campaigns.most_common()),
     ]
     LOG_FILE.write_text("\n".join(log_lines), encoding="utf-8")
     print("\n".join(log_lines[:7]))
     print(f"\n→ {args.out.relative_to(REPO_ROOT)}")
-    print(f"→ {LOG_FILE.relative_to(REPO_ROOT)} (review unrecognized outlets, add to outlets.yaml)")
+    print(f"→ {LOG_FILE.relative_to(REPO_ROOT)}")
+    print("   review unrecognized outlets (add to outlets.yaml)")
+    print("   review unmapped campaign values (add to campaign-aliases.yaml)")
 
 
 if __name__ == "__main__":

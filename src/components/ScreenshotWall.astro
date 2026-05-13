@@ -39,15 +39,15 @@ const cards = clippings.map((c) => ({ ...c, screenshot: resolveScreenshot(c.id) 
           {c.screenshot ? (
             <img
               src={c.screenshot}
-              alt={`${c.outlet} — ${c.product ?? ''}`}
+              alt={`${c.outlet} — ${c.campaign_display ?? ''}`}
               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               loading="lazy"
             />
           ) : (
             <div class="flex h-full w-full flex-col items-center justify-center gap-2 px-4 text-center">
               <span class="text-base font-semibold tracking-tight text-zinc-700">{c.outlet}</span>
-              {c.product && (
-                <span class="text-xs text-zinc-500">{c.product}</span>
+              {c.campaign_display && (
+                <span class="text-xs text-zinc-500">{c.campaign_display}</span>
               )}
             </div>
           )}

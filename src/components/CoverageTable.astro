@@ -12,15 +12,23 @@ const { clippings, showFilters = true } = Astro.props;
 // Build filter option lists from the data.
 const years = [...new Set(clippings.map((c) => c.year))].sort((a, b) => b - a);
 const regions = [...new Set(clippings.map((c) => c.region).filter(Boolean) as string[])].sort();
-const products = [...new Set(clippings.map((c) => c.product).filter(Boolean) as string[])].sort();
 const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
+
+// Campaign dropdown: distinct campaign_display values + synthesized "Event - <X>"
+// labels for any row tagged with an event tag that isn't already a display label.
+const campaignSet = new Set<string>();
+for (const c of clippings) {
+  if (c.campaign_display) campaignSet.add(c.campaign_display);
+  if (c.event) campaignSet.add(`Event - ${c.event}`);
+}
+const campaigns = [...campaignSet].sort();
 ---
 <div class="coverage-table-root">
   {showFilters && (
     <div class="mb-4 flex flex-wrap items-center gap-2 text-sm">
       <input
         type="search"
-        placeholder="Search outlet, product…"
+        placeholder="Search outlet, campaign…"
         class="filter-search w-full rounded-md border border-zinc-300 bg-white px-3 py-1.5 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none sm:w-64"
       />
       <select class="filter-year rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-zinc-700">
@@ -35,6 +43,10 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
         <option value="">All tiers</option>
         {tiers.map((t) => <option value={t}>Tier {t}</option>)}
       </select>
+      <select class="filter-campaign rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-zinc-700">
+        <option value="">All campaigns</option>
+        {campaigns.map((cn) => <option value={cn}>{cn}</option>)}
+      </select>
       <span class="filter-count ml-auto text-xs text-zinc-500"></span>
     </div>
   )}
@@ -45,7 +57,7 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
         <tr>
           <th class="px-3 py-2.5 font-medium">Date</th>
           <th class="px-3 py-2.5 font-medium">Outlet</th>
-          <th class="px-3 py-2.5 font-medium">Product</th>
+          <th class="px-3 py-2.5 font-medium">Campaign</th>
           <th class="px-3 py-2.5 font-medium">Region</th>
           <th class="px-3 py-2.5 font-medium">Type</th>
           <th class="px-3 py-2.5 text-right font-medium">Reach</th>
@@ -59,7 +71,9 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
             data-year={c.year}
             data-region={c.region ?? ''}
             data-tier={c.outlet_tier}
-            data-search={`${c.outlet} ${c.product ?? ''}`.toLowerCase()}
+            data-campaign={c.campaign_display ?? ''}
+            data-event={c.event ?? ''}
+            data-search={`${c.outlet} ${c.campaign_display ?? ''} ${c.event ?? ''}`.toLowerCase()}
           >
             <td class="whitespace-nowrap px-3 py-2 text-zinc-500">{formatDate(c.date)}</td>
             <td class="px-3 py-2">
@@ -68,7 +82,7 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
                 <span class="ml-1.5 inline-block align-middle rounded bg-zinc-900 px-1 py-px text-[9px] font-bold leading-tight text-white">T1</span>
               )}
             </td>
-            <td class="max-w-[24ch] truncate px-3 py-2 text-zinc-600" title={c.product ?? ''}>{c.product ?? '—'}</td>
+            <td class="max-w-[24ch] truncate px-3 py-2 text-zinc-600" title={c.campaign_display ?? ''}>{c.campaign_display ?? '—'}</td>
             <td class="px-3 py-2 text-zinc-500">{c.region ?? '—'}</td>
             <td class="px-3 py-2 text-zinc-500">{c.content_type ?? '—'}</td>
             <td class="whitespace-nowrap px-3 py-2 text-right tabular-nums text-zinc-700">{formatReach(c.reach)}</td>
@@ -100,21 +114,33 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
     const year = root.querySelector('.filter-year');
     const region = root.querySelector('.filter-region');
     const tier = root.querySelector('.filter-tier');
+    const campaign = root.querySelector('.filter-campaign');
     const countEl = root.querySelector('.filter-count');
     const rows = root.querySelectorAll('tbody tr');
+
+    function campaignMatch(row, c) {
+      if (!c) return true;
+      if (row.dataset.campaign === c) return true;
+      // "Event - NAMM 2025" also matches rows tagged with event "NAMM 2025"
+      // (dual-tagged rows whose primary display is a product).
+      if (c.startsWith('Event - ') && row.dataset.event === c.slice(8)) return true;
+      return false;
+    }
 
     function update() {
       const q = (search?.value || '').toLowerCase().trim();
       const y = year?.value || '';
       const r = region?.value || '';
       const t = tier?.value || '';
+      const c = campaign?.value || '';
       let visible = 0;
       rows.forEach((row) => {
         const matches =
           (!q || row.dataset.search.includes(q)) &&
           (!y || row.dataset.year === y) &&
           (!r || row.dataset.region === r) &&
-          (!t || row.dataset.tier === t);
+          (!t || row.dataset.tier === t) &&
+          campaignMatch(row, c);
         row.style.display = matches ? '' : 'none';
         if (matches) visible++;
       });
@@ -123,7 +149,7 @@ const tiers = [...new Set(clippings.map((c) => c.outlet_tier))].sort();
       }
     }
 
-    [search, year, region, tier].forEach((el) => {
+    [search, year, region, tier, campaign].forEach((el) => {
       if (!el) return;
       el.addEventListener('input', update);
       el.addEventListener('change', update);

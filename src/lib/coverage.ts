@@ -11,7 +11,8 @@ export interface Clipping {
   outlet_tier: number;
   outlet_category: string | null;
   outlet_logo: string | null;
-  product: string | null;
+  campaign_display: string | null;
+  event: string | null;
   campaign: string | null;
   content_type: string | null;
   format: string | null;
