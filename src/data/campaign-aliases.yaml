@@ -92,7 +92,11 @@ exact:
   "REVO":                          { label: "Effects - REVO" }
   "Ruben Wan Signature":           { label: "Effects - Ruben Wan Signature" }
   "Double Swords":                 { label: "Effects - Double Swords" }
+  "HLX-500":                       { label: "Guitar - HLX-500" }
+  "CV-3":                          { label: "Guitar - CV-3" }
+  "Beat Pro":                      { label: "Drum - Beat Pro" }
   "MIYAVI - DOUBLE SWORDS":        { label: "Effects - Double Swords" }
+  "DOUBLE SWORDS 线下活动":         { label: "Event - Double Swords (Offline)", event: "Double Swords" }
   "DTC-100":                       { label: "Guitar - DTC-100" }
   "PC-02":                         { label: "Audio Interface - PC-02" }
   "品牌合作 - 效果器 - Triple Threat": { label: "Effects - Triple Threat" }
@@ -131,6 +135,7 @@ exact:
   "PR活动 - 荔枝木":                 { label: "Event - Lychee Wood (PR)" }
   "啸音乐节":                       { label: "Event - Xiao Music Festival" }
   "四夜Only展":                     { label: "Event - Four Nights Only" }
+  "5月演出集合":                    { label: "Event - May Performances" }
   "荣声高校联演":                    { label: "Event - Rongsheng Campus Tour" }
   "Donner Live - Synth模样":        { label: "Event - Donner Live (Synth Stream)" }
   "Donner Live - 顾忠山":           { label: "Event - Donner Live (Gu Zhongshan)" }
@@ -201,6 +206,7 @@ exact:
   "产品营销 - 电鼓":                 { label: "Marketing - Drum" }
   "产品营销 -Fuzz pedal":           { label: "Marketing - Fuzz Pedal" }
   "产品营销-CV-3":                  { label: "Marketing - CV-3" }
+  "产品营销-HUSH X LIVE":           { label: "Marketing - HUSH X LIVE" }
   "产品营销-MAMP2":                 { label: "Marketing - MAMP2" }
   "品牌合作 - MI 合作":              { label: "Marketing - Brand Collab (MI)" }
   "品牌合作 - NEW DEALER":          { label: "Marketing - Dealer" }

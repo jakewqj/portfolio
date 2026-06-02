@@ -14,7 +14,7 @@
 outlets:
   # ── Tier 1 — Global flagships ────────────────────────────────────
   - name: Guitar World
-    aliases: ["Guiar World", "guitarworld", "Guitar World Magazine"]
+    aliases: ["Guiar World", "guitarworld", "Guitar World Magazine", "Guitar World - Facebook"]
     domain: guitarworld.com
     tier: 1
     region: US
@@ -98,6 +98,13 @@ outlets:
     # Matches the 3.39B figure the xlsx already uses for other Yahoo rows; covers
     # blank-reach finance.yahoo.com / yahoo.com news rows from 2023.
     default_muv: 3391000000
+
+  - name: MSN
+    aliases: ["MSN"]
+    domain: msn.com
+    tier: 1
+    region: US
+    category: mass-media
 
   # ── Tier 2 — Strong verticals ────────────────────────────────────
   - name: Guitar Interactive
@@ -196,7 +203,7 @@ outlets:
     category: instrument-vertical
 
   - name: Mikesgig
-    aliases: ["mikesgig"]
+    aliases: ["mikesgig", "Mike's Gig"]
     domain: mikesgig.com
     tier: 3
     region: US
@@ -311,6 +318,39 @@ outlets:
     tier: 1
     region: CN
     category: mass-media
+
+  - name: 搜狐
+    aliases: ["搜狐", "Sohu"]
+    domain: sohu.com
+    tier: 1
+    region: CN
+    category: mass-media
+
+  - name: 吉他中国-公众号
+    aliases: ["吉他中国-公众号", "吉他中国公众号", "GuitarChina WeChat"]
+    tier: 2
+    region: CN
+    category: instrument-vertical
+
+  - name: 《乐器》杂志
+    aliases: ["《乐器》杂志", "乐器杂志", "Musical Instrument Magazine"]
+    tier: 2
+    region: CN
+    category: instrument-vertical
+
+  - name: Digimart
+    aliases: ["Digimart", "digimart"]
+    domain: digimart.net
+    tier: 2
+    region: JP
+    category: instrument-vertical
+
+  - name: VROCKHK
+    aliases: ["VROCKHK", "vrockhk"]
+    domain: vrockhk.com
+    tier: 3
+    region: JP
+    category: music-culture
 
 # Campaign matching rules. First match wins. Used by the import script to tag clippings.
 # Patterns are matched (case-insensitive) against the "推广产品/项目" column.
