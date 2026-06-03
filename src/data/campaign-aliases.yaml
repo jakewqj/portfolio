@@ -136,6 +136,8 @@ exact:
   "啸音乐节":                       { label: "Event - Xiao Music Festival" }
   "四夜Only展":                     { label: "Event - Four Nights Only" }
   "5月演出集合":                    { label: "Event - May Performances" }
+  "展会 - 2023上海乐展 - MIYAVI":     { label: "Event - MIYAVI at Music China 2023", event: "MusicChina 2023" }
+  "展会 - 2024上海展 - MIYAVI":       { label: "Event - MIYAVI Creative Director Announcement", event: "MusicChina 2024" }
   "荣声高校联演":                    { label: "Event - Rongsheng Campus Tour" }
   "Donner Live - Synth模样":        { label: "Event - Donner Live (Synth Stream)" }
   "Donner Live - 顾忠山":           { label: "Event - Donner Live (Gu Zhongshan)" }

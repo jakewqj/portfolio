@@ -352,6 +352,27 @@ outlets:
     region: JP
     category: music-culture
 
+  - name: 电子工程专辑
+    aliases: ["电子工程专辑", "EE Times China"]
+    domain: eet-china.com
+    tier: 3
+    region: CN
+    category: mass-media
+
+  - name: 什么值得买
+    aliases: ["什么值得买", "SMZDM"]
+    domain: smzdm.com
+    tier: 3
+    region: CN
+    category: mass-media
+
+  - name: 知乎
+    aliases: ["知乎", "Zhihu", "知乎专栏"]
+    domain: zhuanlan.zhihu.com
+    tier: 2
+    region: CN
+    category: mass-media
+
 # Campaign matching rules. First match wins. Used by the import script to tag clippings.
 # Patterns are matched (case-insensitive) against the "推广产品/项目" column.
 # Add rules here when launching new featured campaigns.

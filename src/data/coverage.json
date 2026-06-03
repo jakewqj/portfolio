@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-02T10:14:37Z",
+  "generated_at": "2026-06-03T11:21:51Z",
   "source_xlsx": "PR coverages 20260507 - 副本.xlsx",
   "totals": {
-    "clippings": 609,
-    "outlets": 204,
+    "clippings": 614,
+    "outlets": 208,
     "regions": [
       "AU",
       "BR",
@@ -16,11 +16,11 @@
       "UK",
       "US"
     ],
-    "cumulative_reach": 26998635934,
+    "cumulative_reach": 27007242934,
     "by_year": {
-      "2023": 176,
-      "2024": 193,
-      "2025": 155,
+      "2023": 177,
+      "2024": 195,
+      "2025": 157,
       "2026": 85
     },
     "by_campaign": {
@@ -2004,6 +2004,23 @@
       "url": "https://magneticmag.com/2025/11/donner-drops-artist-pedals-smart-guitar-and-new-gear-at-music-china-2025/"
     },
     {
+      "date": "2025-10-28",
+      "year": 2025,
+      "region": "US",
+      "outlet": "Guitar World",
+      "outlet_tier": 1,
+      "outlet_category": "instrument-vertical",
+      "outlet_logo": null,
+      "campaign_display": "Effects - Double Swords",
+      "event": null,
+      "campaign": null,
+      "content_type": "Feature",
+      "format": "online",
+      "reach": 8607000,
+      "url": "https://www.guitarworld.com/gear/guitar-pedals/donner-x-miyavi-double-swords-pedals",
+      "id": "2025-10-28-guitar-world"
+    },
+    {
       "id": "2025-10-27-music-inc",
       "date": "2025-10-27",
       "year": 2025,
@@ -2070,6 +2087,23 @@
       "format": "online",
       "reach": 20000,
       "url": "https://mp.weixin.qq.com/s/HQe3G7rb2AlSZgWaMpPtNw"
+    },
+    {
+      "date": "2025-10-24",
+      "year": 2025,
+      "region": "CN",
+      "outlet": "什么值得买",
+      "outlet_tier": 3,
+      "outlet_category": "mass-media",
+      "outlet_logo": null,
+      "campaign_display": "Effects - Double Swords",
+      "event": null,
+      "campaign": null,
+      "content_type": "Review",
+      "format": "online",
+      "reach": null,
+      "url": "https://post.smzdm.com/zz/p/ax647x32/",
+      "id": "2025-10-24-什么值得买"
     },
     {
       "id": "2025-10-12-midifan",
@@ -4110,6 +4144,40 @@
       "format": "online",
       "reach": 210000,
       "url": "https://mail.pianistmagazine.com/t/cr/AQjbmRQQqc2hAhjck8MNJcOm-MWCJ9_JpLMSSuAm9lK-mT6vYLNJXwltkWx0Y-Q"
+    },
+    {
+      "date": "2024-10-16",
+      "year": 2024,
+      "region": "CN",
+      "outlet": "美通社",
+      "outlet_tier": 3,
+      "outlet_category": "newswire",
+      "outlet_logo": null,
+      "campaign_display": "Effects - Double Swords",
+      "event": null,
+      "campaign": null,
+      "content_type": "News",
+      "format": "online",
+      "reach": null,
+      "url": "https://www.prnasia.com/story/464655-1.shtml",
+      "id": "2024-10-16-美通社"
+    },
+    {
+      "date": "2024-10-01",
+      "year": 2024,
+      "region": "CN",
+      "outlet": "知乎",
+      "outlet_tier": 2,
+      "outlet_category": "mass-media",
+      "outlet_logo": null,
+      "campaign_display": "Event - MIYAVI Creative Director Announcement",
+      "event": "MusicChina 2024",
+      "campaign": null,
+      "content_type": "News",
+      "format": "online",
+      "reach": null,
+      "url": "https://zhuanlan.zhihu.com/p/660236502",
+      "id": "2024-10-01-知乎"
     },
     {
       "id": "2024-08-15-珠江频道",
@@ -7408,6 +7476,23 @@
       "format": "online",
       "reach": 29000000,
       "url": "https://www.tomsguide.com/best-picks/best-cheap-wireless-earbuds"
+    },
+    {
+      "date": "2023-10-12",
+      "year": 2023,
+      "region": "CN",
+      "outlet": "电子工程专辑",
+      "outlet_tier": 3,
+      "outlet_category": "mass-media",
+      "outlet_logo": null,
+      "campaign_display": "Event - MIYAVI at Music China 2023",
+      "event": "MusicChina 2023",
+      "campaign": null,
+      "content_type": "News",
+      "format": "online",
+      "reach": null,
+      "url": "https://www.eet-china.com/mp/a257755.html",
+      "id": "2023-10-12-电子工程专辑"
     },
     {
       "id": "2023-10-10-keyboardkraze",
