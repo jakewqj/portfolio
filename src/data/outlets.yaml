@@ -394,6 +394,20 @@ outlets:
     region: CN
     category: mass-media
 
+  - name: 百家号
+    aliases: ["百家号", "Baijiahao", "百度百家号"]
+    domain: baijiahao.baidu.com
+    tier: 2
+    region: CN
+    category: mass-media
+
+  - name: 东方财富网
+    aliases: ["东方财富网", "东方财富", "EastMoney", "财富号"]
+    domain: eastmoney.com
+    tier: 2
+    region: CN
+    category: mass-media
+
 # Campaign matching rules. First match wins. Used by the import script to tag clippings.
 # Patterns are matched (case-insensitive) against the "推广产品/项目" column.
 # Add rules here when launching new featured campaigns.

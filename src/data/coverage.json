@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-04T04:34:40Z",
+  "generated_at": "2026-06-04T04:46:24Z",
   "source_xlsx": "PR coverages 20260507 - 副本.xlsx",
   "totals": {
-    "clippings": 616,
-    "outlets": 210,
+    "clippings": 618,
+    "outlets": 212,
     "regions": [
       "AU",
       "BR",
@@ -18,7 +18,7 @@
     ],
     "cumulative_reach": 27007247355,
     "by_year": {
-      "2023": 178,
+      "2023": 180,
       "2024": 196,
       "2025": 157,
       "2026": 85
@@ -7496,6 +7496,23 @@
       "url": "https://www.tomsguide.com/best-picks/best-cheap-wireless-earbuds"
     },
     {
+      "date": "2023-10-13",
+      "year": 2023,
+      "region": "CN",
+      "outlet": "东方财富网",
+      "outlet_tier": 2,
+      "outlet_category": "mass-media",
+      "outlet_logo": null,
+      "campaign_display": "Event - MIYAVI at Music China 2023",
+      "event": "MusicChina 2023",
+      "campaign": null,
+      "content_type": "News",
+      "format": "online",
+      "reach": null,
+      "url": "https://caifuhao.eastmoney.com/news/20231013170345953397560",
+      "id": "2023-10-13-东方财富网"
+    },
+    {
       "date": "2023-10-12",
       "year": 2023,
       "region": "CN",
@@ -7511,6 +7528,23 @@
       "reach": null,
       "url": "http://news.ikanchai.com/2023/1012/562719.shtml",
       "id": "2023-10-12-科技快报"
+    },
+    {
+      "date": "2023-10-12",
+      "year": 2023,
+      "region": "CN",
+      "outlet": "百家号",
+      "outlet_tier": 2,
+      "outlet_category": "mass-media",
+      "outlet_logo": null,
+      "campaign_display": "Event - MIYAVI at Music China 2023",
+      "event": "MusicChina 2023",
+      "campaign": null,
+      "content_type": "News",
+      "format": "online",
+      "reach": null,
+      "url": "https://baijiahao.baidu.com/s?id=1779543503893966213",
+      "id": "2023-10-12-百家号"
     },
     {
       "date": "2023-10-12",
